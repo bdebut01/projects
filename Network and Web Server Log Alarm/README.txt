@@ -1,3 +1,6 @@
+Written in Ruby in Fall 2014, for the course: "Security Systems".
+Ben deButts
+
 Depending on command line argument, alarm either parses the passed web server log or analyzes live network streams.
 
 Live stream detection:
