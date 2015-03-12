@@ -1,0 +1,3 @@
+g++ -Wall -Wextra -g solverMain.cpp BogSolver.cpp BogWordList.cpp dictionary.o-o bbsolver
+g++ -Wall -Wextra -g scorerMain.cpp -o bbscorer
+g++ -Wall -Wextra -g BogSolver.cpp checkerMain.cpp BogWordList.cpp BogValidator.cpp dictionary.o -o bbchecker

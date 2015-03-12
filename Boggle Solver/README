@@ -1,0 +1,57 @@
+//** This project was completed for the Tufts University CS course:
+   * 	Data Structures with Professor Ben Hescott Fall 2014.
+   * 	
+   *
+   * 	by Ben deButts
+   **//
+
+Compiling: (sh compile)
+g++ -Wall -Wextra -g solverMain.cpp BogSolver.cpp BogWordList.cpp dictionary.o -o bbsolver
+g++ -Wall -Wextra -g scorerMain.cpp -o bbscorer
+g++ -Wall -Wextra -g BogSolver.cpp checkerMain.cpp BogWordList.cpp BogValidator.cpp dictionary.o -o bbchecker
+
+
+Classes:
+    BogSolver (BogSolver.h / BogSolver.cpp)
+    BogValidator (BogValidator.h / BogValidator.cpp)
+    Dictionary (dictionary.h / dictionary.o)
+
+Structs (all in BogWordList.h and implemented in BogWordList.cpp):
+    BogLett
+    BogWord
+    BogWordList
+
+Mains:
+    solverMain.cpp (bbsolver)
+    checkerMain.cpp (bbchecker)
+    scorereMain.cpp (bbscorer)
+
+Descriptions:
+BogSolver contains the central functions for reading in dictionaries and boggle boards
+alike. The BogValidator later uses these public functions by establishing a private
+instance of a BogSolver in its class. 
+The real meat of BogSolver lies in the two functions solve() and DFS(). Together
+these two function do the bulk of the commanding and solving of the boggle board.
+solve() is a wrapper function of sorts that passes the tile to be investigated to the
+recursive DFS (depth first search) function. DFS() recurses on only the passed BogLett's
+neighbors and builds the internal "string word" as it goes so that it can continually check
+Dictionary for prefix or word results. If a attempt isn't a prefix, it decrements and returns.
+
+A note on the recording of found solutions. While solve() is running through its for loop, it is
+only adding BogWords to a wordlist queue within the BogSolver private variables. Later, upon
+finishing the solving of the board, it calls a constructBogWordList function which transfers
+all found data into the export-friendly BogWordList struct. Additionally, BogSolver contains a 
+additional Dictionary which records which words are added to the found list. This way, when it comes
+time to check if words have already been added, the program takes constant time as it only has to search
+a Dictionary (trie that was implemented by you guys) that has been continually updated as the solver 
+runs. 
+
+Structs:
+BogWords contain dynamic arrays of BogLetts
+BogWordLists contain dynamic arrays of BogWords. Copy constructors and assignment operators 
+were written to allow the easier (and deep) copying of BogWords' array of BogLetts.
+
+BogValidator makes an instance of BogSolver in its private variables so that most of its main functions
+are simply telling solver to run its own public functions.
+
+Think that's mostly it... Thanks for a great semester guys.
