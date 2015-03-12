@@ -1,0 +1,14 @@
+//stack.ums
+//by Benjamin deButts, 4/29/14
+//Start up code for the calculator. 
+//Establishes initialization as well as throughout
+//program precedents. Additionally, allocates space for the
+//central program stack plus the 10000 elements that could occur
+//given errors in input.
+
+.section init
+.zero r0
+        .temps r6, r7
+        .section stk
+        .space 110000 //100k plus the 10k values
+        endstack:

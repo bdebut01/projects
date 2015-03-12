@@ -1,0 +1,118 @@
+//printd.ums
+//by Benjamin deButts, 4/29/14
+//Contains procedural code to print the decimal values on the stack. 
+//Lies in .text so r3 and r4 retain their flag and counter (respectively)
+//responsibilities. However, r3 is pushed on to the stack and used as a loop 
+//counter at one point so it isn't referenced as a flag throughout the entire
+//procedure. Similarly, though r4 does remain a counter of the number of 
+//of elements on the stack, it is changed throughout only to be restored at
+//the termination of the procedure.
+
+
+.section text
+//The central procedure that is called for printing the stack.
+//Can be called whether the stack is populated or not, whether the numbers on 
+//      it are negative, multidigit, or single. 
+//Will print them in the order they exist on the stack, top of the stack printed
+//      first. 
+//r1 is given the decimal value on the stack that is printed each iteration.
+//r2 is stack pointer, remains the same the entire procedure
+//r0 is zero
+//r4 is an iterator that increments each loop, working its way to the bottom of
+//      the stack as it is added to r2 and given to r5.
+//r5 is the artificial stack pointer of sorts, and is pointed first at the 
+//      bottom of the stack but continually incremented with r4 to get to the
+//      top of the stack and finish.
+//r6, r7 are temporary registers
+print_stack:
+    if(r4 == r0) goto waiting using r5, r6, r7 //if nothing on stack, do nothing
+    r4 := 0x800000000
+    if(r1 >=s r4) r1 := 0 using r5, r6, r7 //deal with biggest negative number?
+    //going to violate condition of r4, however return it to normal at end    
+    r4 := 0 using r6
+    loop_printstart:
+    //set r5 to the top of the stack with r4 incrementing one each loop
+    r5 := r2 + r4 using r6
+    r1 := m[r0][r5]
+    
+    //if negative value go to negative treatment
+    if(r1 <s 0) goto negative using r5, r6, r7
+    //else positive or zero 
+
+    ////////////////////// POSITIVE NUMBERS ////////////////////////
+    positive:
+    output ">>> " using r6 //all pos procedures assume this has been printed
+    
+    //Recursive function that print will print the r1, current decimal
+    //      stack value. Will work for positive single, multi, and
+    //      zero decimal values. Effectively does NO lasting changes to the 
+    //      stack and pushes for every pop.
+    //r3 is used as a loop counter so that the later print function knows
+    //      how many digits have been pushed on to the stack.
+    //r1 is the original value, however it is altered throughout, winding its
+    //      way down to a single digit value.
+    //r5 catches the ones digit each time and is pushed onto the stack as a 
+    //      digit in the larger number.
+    pos_digit:
+        push r3 on stack r2 using r6 //save nonvolatile register
+        r3 := 0 //will be a counter for number of digits pushed
+        pos_loopstart:
+        r3 := r3 + 1 using r6
+        if(r1 <s 10) goto pos_basecase using r5, r6, r7
+
+        r5 := r1 mod 10 using r6, r7
+        r1 := r1 - r5 using r6, r7
+        push r5 on stack r2 using r6
+        r1 := r1 / 10 using r6, r7
+        goto pos_loopstart using r6, r7
+        
+        pos_basecase:
+                push r1 on stack r2 using r6
+                goto pos_multiprint using r5, r6
+
+        //Will pop and print the numbers pushed on to the stack in the 
+        //      recursion above stopping when the loop counter (r3) has returned
+        //      to zero.
+        //r5 is the decimal turned ASCII character that is popped each iteration
+        //      from the stack. 
+        pos_multiprint:
+        pop r5 off stack r2 using r6
+        r5 := r5 + '0' using r6
+        output r5 using r6
+        r3 := r3 - 1 using r6, r7
+        if(r3 != 0) goto pos_multiprint using r5, r6, r7
+        
+        pop r3 off stack r2 using r6 //restore nonvolative
+        goto bottom_loop using r6, r7
+
+    /////////////////// NEGATIVE NUMBERS //////////////////////////
+    //Prints negative decimal values only.
+    //Identical to positive treatment, only it outputs a '-' sign first.
+    //Takes the r1 current decimal, multiplies it by -1 and sends it to the
+    //      positive recursive print function above.
+    negative:
+    output ">>> -" using r6
+    r1 := r1 * -1 using r6, r7
+    //then treat like any other positive digit
+    goto pos_digit using r6, r7
+    
+
+    //Bottom of the overall printing loop.
+    //Outputs a newline character, sets r5 to the number of numeral values on
+    //      the stack and checks to see if r4, the loop counter, has looped thru
+    //      that many digits yet. If not, loop again and go back to start. 
+    //      Else, terminate loop, set r4 to the number of decimal values again,
+    //      and return to waiting state.
+
+    bottom_loop:
+    output "\n" using r6
+    r5 := endstack - r2 using r6, r7
+    r4 := r4 + 1 using r6 //increment
+    //if r4 hasn't reached total number of values in stack yet, loop
+    if(r4 != r5) goto loop_printstart using r5, r6, r7
+
+    // reset r4 to its former value, return to waiting        
+    r4 := endstack - r2 using r5, r6
+    goto waiting using r5, r6
+        
+    

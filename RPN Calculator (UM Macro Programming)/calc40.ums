@@ -1,0 +1,446 @@
+//calc40.ums
+//by Benjamin deButts, 4/28/14
+//Contains code to initialize a jump table of possible inputs
+//As well as procedural code for operands and digit input
+//All initialization code falls right before the procedure that it
+//will run. This keeps the implementation of each operator relatively
+//self-contained (as per Ramsey's suggestion)
+
+
+.section rodata
+//jump table
+//make space for the 255 values that could be inputted
+jumptable:
+         .space 256
+
+//Initialize the jump table.
+//Below is a mix of .init and .text sections where the initialization 
+//of any valid input precedes the procedure that will run
+//when that input is entered. 
+//stack pointer in r2
+//temporary regs r6, r7
+//**In any .text procedure: **//
+//r3 is a flag that describes what the last input was:
+//      1: the last input was a digit
+//      0: the last input was anything BUT digit (operand, space, or otherwise)
+//r4 is a counter that increments anytime a numeral value is put on the stack
+.section init
+    r3 := 0
+    r4 := 0
+////////initialize all 256 to error
+//r4 gets the jump table address
+//r0 is zero
+//r3 is a iterator
+initloop:
+    r4 := jumptable + r3 using r5
+    m[r0][r4] := input_err using r5 
+    r3 := r3 + 1 using r5
+    if(r3 != 256) goto initloop using r5, r6, r7
+
+//blank character do nothing, no digit seen, go back to waiting
+m[r0][jumptable + ' '] := space using r5, r6
+.section text
+space:
+    r3 := 0 //no digit, reset flag
+    goto waiting using r5, r6
+
+.section init
+///////loop and detect digits 0 - 9
+//each value '0' - '9' gets set to the same digit procedure
+//r4 gets the jumptable address
+//r3 is a iterator
+r3 := '0'
+digitloop:
+    r4 := jumptable + r3 using r5
+    m[r0][r4] := digit using r5, r6
+    r3 := r3 + 1 using r6
+    if(r3 != 58) goto digitloop using r5, r6, r7
+        
+
+.section text
+/////////// Numeral procedure /////////
+
+//for single digit numerals, converts to decimal and pushes on stack
+//then increments number of values counter and sets the value seen flag to 1
+//for multidigit numerals, (ie the r3 flag is set to 1), the appropriate
+//shifting is done
+digit: 
+    r1 := r1 - '0' using r5, r6 //change to decimal value in either case
+    if(r3 == 1) goto shift_digits using r5, r6, r7
+    
+    push r1 on stack r2 using r5 //push on to value stack
+    r4 := r4 + 1 using r5 //increment number of values on the stack
+    r3 := 1 //set flag because digit was read
+    goto waiting using r5, r6 //read next value
+
+//called when r3 flag is 1
+//means that there is a numeral value already on the stack that 
+//should be popped and shifted left (multiplied by 10)
+//r1 contains the current numeral value (current least significant place)
+//r5 is given the new multidigit numeral and pushed back on to the stack
+shift_digits:
+    pop r5 off stack r2 using r6 //get previous number
+    r5 := r5 * 10 using r6 //multiply by 10 to shift left one
+    r5 := r5 + r1 using r6 //add current ones place digit
+    push r5 on stack r2 using r6 //push multidigit number back on
+    goto waiting using r5, r6
+
+///////////// Operand initialization and procedures ////////////
+
+//////////////addition
+.section init
+m[r0][jumptable + '+'] := add using r6, r7
+
+.section text
+//adds two values
+//r3 is flag, set to zero because operand has been seen
+//r5 r6 take the two stack decimals to be added
+//r5 gets the decimal result and is pushed on the stack
+add:
+    if(r4 <s 2) goto stack_underflow2 using r5, r6, r7
+    r3 := 0 //set flag to 0, operand has been seen
+    pop r6 off stack r2 using r7
+    pop r5 off stack r2 using r7
+    r5 := r5 + r6 using r7
+    push r5 on stack r2 using r7 //push value on to stack
+    r4 := r4 - 1 using r6, r7 //decrement number of values on stack
+    goto waiting using r6, r7
+
+//////////////subtract
+.section init
+m[r0][jumptable + '-'] := subt using r6, r7
+
+.section text
+//Given two stack decimals on the stack,
+//subtracts the first decimal popped off the stack (r6)
+//from the second and pushes the decimal result (r5)
+//Decrements number of values on stack and returns to waiting state
+subt:
+    if(r4 <s 2) goto stack_underflow2 using r5, r6, r7
+    r3 := 0 //set flag to 0, operand has been seen
+    pop r6 off stack r2 using r7
+    pop r5 off stack r2 using r7
+    r5 := r5 - r6 using r7
+    push r5 on stack r2 using r7 //push value on to stack
+    r4 := r4 - 1 using r6, r7 //decrement number of values on stack
+    goto waiting using r6, r7
+
+//////////////multiply
+.section init
+m[r0][jumptable + '*'] := mult using r6, r7
+        
+.section text
+//Given two stack decimals on the stack,
+//multiplies the first decimal popped off the stack (r6)
+//by the second and pushes the decimal result (r5)
+//Decrements number of values on stack and returns to waiting state
+mult:
+    if(r4 <s 2) goto stack_underflow2 using r5, r6, r7
+    r3 := 0 //set flag to 0, operand has been seen
+    pop r6 off stack r2 using r7
+    pop r5 off stack r2 using r7
+    r5 := r5 * r6 using r7
+    push r5 on stack r2 using r7 //push value on to stack
+    r4 := r4 - 1 using r5, r6 //decrement number of values on stack
+    goto waiting using r5, r6  
+       
+//////////////and
+.section init
+m[r0][jumptable + '&'] := and using r6, r7
+        
+.section text
+//Given two stack decimals on the stack,
+//ands the first decimal popped off the stack (r6)
+//with the second and pushes the decimal result (r5)
+//Decrements number of values on stack and returns to waiting state
+and:
+    if(r4 <s 2) goto stack_underflow2 using r5, r6, r7
+    r3 := 0 //set flag to 0, operand has been seen
+    pop r6 off stack r2 using r7 //y
+    pop r5 off stack r2 using r7 //x
+    r5 := r5 & r6 using r7 //x ^ y
+    push r5 on stack r2 using r6 //push value on to stack
+    r4 := r4 - 1 using r6, r7 //decrement number of values on stack
+    goto waiting using r6, r7
+
+//////////////or
+.section init
+m[r0][jumptable + '|'] := or using r6, r7
+        
+.section text
+//Given two stack decimals on the stack,
+//ors the first decimal popped off the stack (r6)
+//with the second and pushes the decimal result (r5)
+//Decrements number of values on stack and returns to waiting state
+or:
+    if(r4 <s 2) goto stack_underflow2 using r5, r6, r7
+    r3 := 0 //set flag to 0, operand has been seen
+    pop r6 off stack r2 using r7 //y
+    pop r5 off stack r2 using r7 //x
+    r5 := r5 | r6 using r7 // x V y
+    push r5 on stack r2 using r7 //push value on to stack
+    r4 := r4 - 1 using r6, r7 //decrement number of values on stack
+    goto waiting using r6, r7
+
+              
+//////////////bitwise complement
+.section init
+m[r0][jumptable + '~'] := compl using r6, r7
+        
+.section text
+//Given at least one decimal value on the stack,
+//gives r5 the bitwise complement of itself and pushes the new value
+//Returns to waiting state after
+compl:
+    if(r4 <s 1) goto stack_underflow1 using r5, r6, r7
+    r3 := 0 //set flag to 0, operand has been seen
+    pop r5 off stack r2 using r7
+    r5 := ~r5 using r7 //COULD TRY TEMPORARILY PUTTING IN ADDITIONAL REGS
+    push r5 on stack r2 using r6 //push value on to stack
+    goto waiting using r6, r7
+              
+              
+//////////////switch sign
+.section init
+m[r0][jumptable + 'c'] := sign using r6, r7
+        
+.section text
+//Given at least one decimal value on the stack,
+//gives r5 the sign opposite its current one, pushes the result
+//Returns to waiting state after
+sign:
+    if(r4 <s 1) goto stack_underflow1 using r5, r6, r7
+    r3 := 0 //set flag to 0, operand has been seen
+    pop r5 off stack r2 using r7
+    r5 := -r5 using r7
+    push r5 on stack r2 using r6 //push value on to stack
+    goto waiting using r6, r7
+        
+        
+//////////////swap
+.section init
+m[r0][jumptable + 's'] := swap using r6, r7
+        
+.section text
+//Given at least two decimals values on the stack,
+//pops both values then pushes them in the same order swapping the two
+//Returns to waiting state after.
+swap:
+    if(r4 <s 2) goto stack_underflow2 using r5, r6, r7
+    r3 := 0 //set flag to 0, operand has been seen
+    pop r5 off stack r2 using r7
+    pop r6 off stack r2 using r7
+    push r5 on stack r2 using r7 //push value on to stack
+    push r6 on stack r2 using r7
+    goto waiting using r6, r7
+              
+/////////////duplicate
+.section init
+m[r0][jumptable + 'd'] := dup using r6, r7
+        
+.section text
+//Given at least one decimal value on the stack,
+//pops the value into r5, then pushes it back on twice
+//duplicating the value.
+//Increments number of values on the stack and returns to waiting state
+dup:
+    if(r4 <s 1) goto stack_underflow1 using r5, r6, r7
+    r3 := 0 //set flag to 0, operand has been seen
+    pop r5 off stack r2 using r7
+    push r5 on stack r2 using r7 //push value twice to duplicate
+    push r5 on stack r2 using r7
+    r4 := r4 + 1 using r6 //increment number of values on stack
+    goto waiting using r6, r7
+            
+/////////////pop and discard
+.section init
+m[r0][jumptable + 'p'] := pop_discard using r6, r7
+        
+.section text
+//Given at least one decimal value on the stack,
+//pops the value and decrements the number of values on the stack
+//Returns to waiting state
+pop_discard:
+    if(r4 <s 1) goto stack_underflow1 using r5, r6, r7
+    r3 := 0 //set flag to 0, operand has been seen
+    r4 := r4 - 1 using r6, r7 //decrement number of values on stack
+    pop stack r2 using r7
+    goto waiting using r6, r7
+            
+/////////////pop all
+.section init
+m[r0][jumptable + 'z'] := popall using r6, r7
+        
+.section text
+//loops through and pops the entire stack
+//Uses the r4 number of values on the stack counter to dictate how
+//many more pops need to occur. Will loop until the counter has reached 
+//zero. Returns to waiting state after.
+popall:
+    r3 := 0 //set flag to 0, operand has been seen
+    if(r4 <s 1) goto waiting using r5, r6, r7 //stack empty? do nothing
+    loop_popall:
+    pop stack r2 using r7
+    r4 := r4 - 1 using r6, r7 //decrement number of digits on stack
+    if(r4 != 0) goto loop_popall using r5, r6, r7
+    goto waiting using r5, r6
+       
+//////////////division
+.section init
+m[r0][jumptable + '/'] := div using r6, r7
+        
+.section text
+//Given two decimal values on the stack, divides the second value
+//obtained from the stack (r6) by the first value (r5)
+//Deals with the four cases -x / y, x / y, x / -y, and -x / -y
+//r1 gets the result of any division and is pushed on to the stack
+//then whichever sub procedure goes to the end_div label which
+//decrements the number of values on the stack and returns to waiting state
+div:
+    r3 := 0 //set flag to 0, operand has been seen
+    if(r4 <s 2) goto stack_underflow2 using r5, r6, r7
+
+    r1 := m[r0][r2] //set r1 to top value on stack
+    // x / 0
+    if(r1 == r0) goto div_by_zero_err using r5, r6, r7 //no div by 0
+            
+    // -y
+    if(r1 <s 0) goto div_neg_y using r5, r6, r7
+
+    // -x
+    r1 := m[r0][r2 + 1] using r6
+    if(r1 <s 0) goto div_neg_x using r5, r6, r7
+
+    //else x / y
+    goto div_pospos using r6, r7 
+
+    //NEGATIVE Y
+    //evaluates whether x is negative or positive and acts accordingly
+    div_neg_y:
+        r1 := m[r0][r2 + 1] using r6 //set r1 to 2nd stack decimal value (x)
+        if(r1 <s 0) goto div_xy_neg using r5, r6, r7 //both are negative
+        
+        //else x / -y 
+        goto div_yneg_xpos using r6, r7
+        // -x / -y
+        div_xy_neg:
+            pop r5 off stack r2 using r7 //y
+            pop r6 off stack r2 using r7 //x
+            r5 := r5 * -1 using r7
+            r6 := r6 * -1 using r7
+            r1 := r6 / r5 using r7
+            push r1 on stack r2 using r7
+            goto end_div using r6, r7
+        // x / -y
+        div_yneg_xpos:
+            pop r5 off stack r2 using r7 //y
+            pop r6 off stack r2 using r7 //x
+            r5 := r5 * -1 using r7
+            r5 := r6 / r5 using r7
+            r1 := r5 * -1 using r7 //restore to negative
+            push r1 on stack r2 using r7
+            goto end_div using r6, r7
+    //NEGATIVE X        
+    div_neg_x:
+        r5 := m[r0][r2] using r6 //give y to r5
+        //if y is neg, both are negative goto both procedure above
+        if(r5 <s 0) goto div_xy_neg using r5, r6, r7
+        
+        //else -x / y
+        pop r5 off stack r2 using r7 //y
+        pop r6 off stack r2 using r7 //x
+        r6 := r6 * -1 using r7
+        r6 := r6 / r5 using r7
+        r1 := r6 * -1 using r7 //restore to negative
+        push r1 on stack r2 using r7
+        goto end_div using r6, r7
+    
+    //BOTH POSITIVE        
+    div_pospos: 
+        pop r5 off stack r2 using r7 //y
+        pop r6 off stack r2 using r7 //x
+        r1 := r6 / r5 using r7
+        push r1 on stack r2 using r7
+             
+end_div:
+    r4 := r4 - 1 using r6, r7 ///decrement number of digits on stack
+    goto waiting using r6, r7
+        
+.section init
+m[r0][jumptable + '\n'] := printstack using r6, r7
+        
+.section text
+//Given at least one decimal on the stack, print the entire stack
+//of values. Go to the print_stack function which is in a separate:
+//printd.ums file.
+printstack:
+    r3 := 0 //operand, not a digit, reset flag
+    if(r4 <s 1) goto waiting using r5, r6, r7 //no vals on stack, do nothing
+    goto print_stack using r6, r7 //go to print entire stack
+       
+.section text
+///////MAIN
+//Throughout this section, I have made r3 and r4 nonvolatile special registers.
+//r3 is a flag that is set to 1 anytime a digit is inputted. Following any
+//      operation, error, or otherwise, the flag is reset to 0. This is 
+//      important for the functionality of numerals greater than 9.
+//r4 is a counter that at anytime describes the number of numerals on the stack
+//Waiting state inputs a character, checks for EOF, and jumps to the appropriate
+//address as given to r5. 
+main: 
+        r3 := 0 //flag for multiple digit numbers
+        r4 := 0 //to count the number of digits on the stack
+waiting:
+        r1 := input()
+waiting_with_character:
+        r5 := -1
+        if(r1 == r5) goto endprog using r5, r6, r7
+        r5 := jumptable + r1 using r6
+        goto m[r0][r5] using r6, r7
+
+///////Program End
+//Function calls halt and terminates the program (ie, no "goto" needed)
+endprog:
+        halt
+
+//////// ERROR FUNCTIONS
+//NOTE: All incorrect inputs reset the "digit-seen" flag, r3, to zero.
+//This is according to the observed behavior of the solution RPN.
+//Also, all error functions return to waiting state upon their conclusion.
+
+//Input_err is called upon the reception of any unknown input character value
+//r1 still contains the inputted character, so the function outputs which 
+//character it didn't recognize then returns to waiting state.
+input_err:
+        output "Unknown character: " using r5
+        output r1 using r5
+        output "\n" using r5
+        r3 := 0
+        goto waiting using r5, r6
+
+//Stack_underflow2 error is called when an operation is demanded when too
+//few decimal values exist on the stack. In particular, this message is called
+//when an operand requires TWO decimals and less than that exist on the stack.
+stack_underflow2:
+        output "Stack underflow---expected at least 2 elements" using r5
+        output "\n" using r5
+        r3 := 0
+        goto waiting using r5, r6
+
+//Stack_underflow1 error is called when an operation is demanded when too
+//few decimal values exist on the stack. In particular, this message is called
+//when an operand requires ONE decimal and less than that exist on the stack.
+stack_underflow1:
+        output "Stack underflow---expected at least 1 element" using r5
+        output "\n" using r5
+        r3 := 0
+        goto waiting using r5, r6
+
+//Like it sounds, the div_by_zero_err, is called when there is attempted
+//division by zero.
+div_by_zero_err:
+        output "Division by zero" using r5
+        r3 := 0
+        output "\n" using r5
+        goto waiting using r5, r6
+

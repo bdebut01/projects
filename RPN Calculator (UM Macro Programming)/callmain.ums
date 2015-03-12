@@ -1,0 +1,13 @@
+//callmain.ums
+//by Benjamin deButts, 4/29/14
+//At the end of compilation, sets r0 and r2 
+//to zero and the end of the stack respectively.
+//So that at start of the next section, these
+//registers are set and ready to be used. Calls main
+//within calc40.ums file to start the main program.
+
+.section init
+    r0 := 0
+    r2 := endstack
+    goto main linking r1 using r5, r6 //call main
+halt
