@@ -1,6 +1,6 @@
 A comprehensive hub for displaying my completed projects.
 
-Language shortcuts:
+Language shortcuts: 
 Access log: Java using Processing as the IDE
 Boggle solver: C++
 Network & Web Alarm: Ruby
