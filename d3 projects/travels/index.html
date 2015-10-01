@@ -1,0 +1,279 @@
+<head>
+	<script type="text/javascript" src="../d3/d3.min.js"></script>
+	<script type="text/javascript" src="../d3/topojson.js"></script>
+
+	<script src="../d3/bower_components/datamaps/dist/datamaps.all.min.js"></script>
+</head>
+<body>
+<div id="container" 
+	style="position: absolute; width: 100%;
+		   margin: 0px; padding: 0px;"></div>
+<script>
+
+var map = new Datamap({
+	element: document.getElementById('container'),
+	scope: 'world',
+	responsive: true,
+	geographyConfig: {
+		//popupOnHover: false,
+		popupTemplate: function(geo, data) {
+			try { data["details"] //Has entry
+				return '<div class="hoverinfo">' + '<strong>' + geo.properties.name + '</strong>' + '<br>Details: </b>' + data["details"] + '</div>';
+			} catch(err) { //Doesn't have entry, just list name
+				return '<div class="hoverinfo">' + '<strong>' + geo.properties.name + '</strong>' + '<br>' + "Haven't visited!";} 
+		},
+		highlightFillColor: '#EB7F00',
+	},
+	fills: {
+		defaultFill: '#ACF0F2',
+		"1" : '#1695A3',
+		"2" : '#225378',  
+	},
+	data : {
+		"USA" : {
+			"details" : "I live here!",
+			"fillKey" : "2",
+		},
+		"BHS" : {
+			"order numbers"	: "0",
+			"trip IDs" 		: "0",
+			"dates" 		: "2002",
+			"times visited" : "1",
+			"duration" 	    : "1 week",
+			"with" 			: "whole family",
+			"details" 		: "\"eco-camping\" with family",
+			"fillKey" 		: "1",
+		},
+
+		"ITA" : {
+			"order numbers"	: "1",
+			"trip IDs" 		: "1",
+			"dates" 		: "Summer 2006",
+			"times visited" : "1",
+			"duration" 	    : "3 weeks",
+			"with" 			: "whole family",
+			"details" 		: "Rome > Pompeii > Tuscany > Cinque Terre > Venice",
+			"fillKey" 		: "1",
+		},
+
+		"CHE" : {
+			"order numbers"	: "2",
+			"trip IDs" 		: "1",
+			"dates" 		: "Summer 2006",
+			"times visited" : "1",
+			"duration" 	    : "1 week",
+			"with" 			: "whole family, friend",
+			"details" 		: "visited friend living in Geneva, day trips to Interlochen, the Alps",
+			"fillKey" 		: "1",
+		},
+
+		"FRA" : {
+			"order numbers"	: "3",
+			"trip IDs" 		: "1",
+			"dates" 		: "Summer 2006",
+			"times visited" : "1",
+			"duration" 	    : "1 day",
+			"with" 			: "whole family, friend",
+			"details" 		: "went to Paleo concern in Leon",
+			"fillKey" 		: "1",
+		},
+
+		"GBR" : {
+			"order numbers" : "4, 11",
+			"trip IDs" 	    : "1, 6",
+			"dates" 	    : "Summer 2006, Spring 2015",
+			"times visited" : "2",
+			"duration" 	    : "1 week, 5 months",
+			"with" 		    : "whole family",
+			"details" 	    : "London for 1 week, later attended University of Edinburgh in Scotland for spring semester of my junior year",
+			"fillKey" 	    : "2",
+		},
+		
+
+		"GTM" : {
+			"order numbers"	: "5",
+			"trip ID" 		: "2",
+			"dates" 		: "Summer 2008",
+			"times visited" : "1",
+			"duration" 	    : "1 month",
+			"with" 			: "older brother, high school students from Minnesota",
+			"details" 		: "month-long Spanish learning course, immersion in Quetzaltenango",
+			"fillKey" 		: "1",
+		},
+
+		"CRI" : {
+			"order numbers"	: "6",
+			"trip ID" 		: "3",
+			"dates" 		: "Summer 2009",
+			"times visited" : "1",
+			"duration" 	    : "1 month",
+			"with" 			: "2 friends, other high school students from US",
+			"details" 		: "month-long Spanish immersion in Atenas",
+			"fillKey" 		: "1",
+		},
+
+		"JPN" : {
+			"order numbers"	: "7",
+			"trip ID" 		: "3",
+			"dates" 		: "Summer 2012",
+			"times visited" : "1",
+			"duration" 	    : "3 weeks",
+			"with" 			: "older brother",
+			"details" 		: "backpacked throughout including Tokyo, Sendai, Kanazawa, Hiroshima, Kyoto, Obama",
+			"fillKey" 		: "1",
+		},
+
+		"CHN" : {
+			"order numbers"	: "8",
+			"trip ID" 		: "3",
+			"dates" 		: "Summer 2012, Summer 2015",
+			"times visited" : "2",
+			"duration" 	    : "10 days, 20 days",
+			"with" 			: "older brother, tour group, whole family minus youngest brother",
+			"details" 		: "mostly on tour through Shanghai, Beijing, || later returned to visit brother working in Beijing, toured down through southern China",
+			"fillKey" 		: "2",
+		},
+
+		"ISR" : {
+			"order numbers"	: "9",
+			"trip ID" 		: "4",
+			"dates" 		: "Winter 2014",
+			"times visited" : "1",
+			"duration" 	    : "10 days",
+			"with" 			: "Tufts birthright",
+			"details" 		: "birthright trip",
+			"fillKey" 		: "1",
+		},
+
+		"CDN" : {
+			"order numbers"	: "10",
+			"trip ID" 		: "5",
+			"dates" 		: "Spring 2014",
+			"times visited" : "1",
+			"duration" 	    : "1 week",
+			"with" 			: "friends from Tufts",
+			"details" 		: "bused to Montreal for a week with friends",
+			"fillKey" 		: "1",
+		},
+
+		"NLD" : {
+			"order numbers"	: "12",
+			"trip ID" 		: "7",
+			"dates" 		: "February 2015",
+			"times visited" : "1",
+			"duration" 	    : "3 days",
+			"with" 			: "friend",
+			"details" 		: "Amsterdam for 2 days during week off from University",
+			"fillKey" 		: "1",
+		},
+
+		"BEL" : {
+			"order numbers"	: "13",
+			"trip ID" 		: "7",
+			"dates" 		: "February 2015",
+			"times visited" : "1",
+			"duration" 	    : "3 days",
+			"with" 			: "friend",
+			"details" 		: "Bruges for 2 days during week off from University",
+			"fillKey" 		: "1",
+		},
+
+		"DEU" : {
+			"order numbers"	: "14",
+			"trip ID" 		: "8",
+			"dates" 		: "April 2015",
+			"times visited" : "1",
+			"duration" 	    : "2 days",
+			"with" 			: "friend",
+			"details" 		: "Munich, day trip to Neushwanstein castle",
+			"fillKey" 		: "1",
+		},
+
+		"CZE" : {
+			"order numbers"	: "15",
+			"trip ID" 		: "8",
+			"dates" 		: "April 2015",
+			"times visited" : "1",
+			"duration" 	    : "3 days",
+			"with" 			: "friend",
+			"details" 		: "Prague, day trip to Kutna Hora",
+			"fillKey" 		: "1",
+		},
+
+		"POL" : {
+			"order numbers"	: "16",
+			"trip ID" 		: "8",
+			"dates" 		: "April 2015",
+			"times visited" : "1",
+			"duration" 	    : "3 days",
+			"with" 			: "friend",
+			"details" 		: "Krakow",
+			"fillKey" 		: "1",
+		},
+
+		"HUN" : {
+			"order numbers"	: "17",
+			"trip ID" 		: "8",
+			"dates" 		: "April 2015",
+			"times visited" : "1",
+			"duration" 	    : "2 days",
+			"with" 			: "friend",
+			"details" 		: "Budapest",
+			"fillKey" 		: "1",
+		},
+
+
+		"LAO" : {
+			"order numbers"	: "18",
+			"trip ID" 		: "9",
+			"dates" 		: "July '15",
+			"times visited" : "1",
+			"duration" 	    : "4 days",
+			"with" 			: "older and younger brother",
+			"details" 		: "bus from China into Luang Prabang, stayed and motorbiked around neighboring countryside",
+			"fillKey" 		: "1",
+		},
+
+		"KHM" : {
+			"order numbers"	: "19",
+			"trip ID" 		: "9",
+			"dates" 		: "July '15",
+			"times visited" : "1",
+			"duration" 	    : "2 days",
+			"with" 			: "older and younger brother",
+			"details" 		: "stayed in Phnom Penh, overnight bus to Siem Reap to see Angkor Wat",
+			"fillKey" 		: "1",
+		},
+
+		"THA" : {
+			"order numbers"	: "20",
+			"trip ID" 		: "9",
+			"dates" 		: "July '15",
+			"times visited" : "1",
+			"duration" 	    : "1 week",
+			"with" 			: "older and younger brother",
+			"details" 		: "3 days in Chiang Mai, train to Bangkok for another 4 days",
+			"fillKey" 		: "1",
+		}
+	/*	"" : {
+			"order numbers"	: "",
+			"trip ID" 		: "",
+			"dates" 		: "",
+			"times visited" : "",
+			"duration" 	    : "",
+			"with" 			: "",
+			"details" 		: "",
+			"fillKey" 		: "",
+		},*/
+
+	}
+
+});
+console.log("successfully fetched");
+d3.select(window).on('resize', function() {
+	map.resize();
+});
+
+d3.select("container").append('<div id="button" style="width: 100px; height: 100px; background-color: black;"</div>');
+</script>
+</body>

@@ -1,0 +1,7 @@
+#!/bin/bash
+#does all needed ipfw commands
+
+ipfw add pipe 10 in
+ipfw add pipe 20 out
+ipfw pipe 10 config delay 10ms bw 10Mbits/s
+ipfw pipe 20 config delay 10ms plr 0.1 bw 10Mbits/s

@@ -1,0 +1,2 @@
+Using Dummynet and sending 1KB messages over localhost,
+implements the stop-and-wait sliding window protocol.
