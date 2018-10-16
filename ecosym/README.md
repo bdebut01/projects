@@ -120,7 +120,7 @@ marine life).
 - `random_pick` was taken from [Python Cookbook, 2nd Edition](http://bit.ly/1QfSwDs)
 
 Files that contain class definitions for our organisms. All of them eventually 
-inherit from Organism, and some also inherit from Fish:
+inherit from `Organism`, and some also inherit from `Fish`:
 - `coccolithophores.py`
 - `grouper.py`
 - `herring.py`
