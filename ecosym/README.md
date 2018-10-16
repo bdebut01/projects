@@ -62,70 +62,70 @@ marine life).
 ## Directory & Files explanation
 
 
-main.py
--- contains the main function, which prompts the user for input, retrieves it, 
+`main.py`
+- contains the main function, which prompts the user for input, retrieves it, 
     instantiates an Ecosystem with the appropriate parameters, and starts the 
     simulation
--- imports ecosystem and all of the organisms (used for allowing the user to 
+- imports ecosystem and all of the organisms (used for allowing the user to 
     decide how many of each organism to populate the ocean with)
 
-ecosystem.py
--- contains the definition of the Ecosystem class
--- This class is the centralized mechanism that does most of the work of 
+`ecosystem.py`
+- contains the definition of the Ecosystem class
+- This class is the centralized mechanism that does most of the work of 
     launching, running, and displaying the simulation.
--- imports all of the organisms, seablock, location, foodchain, as well as Lock,
+- imports all of the organisms, seablock, location, foodchain, as well as Lock,
     Barrier, and with_lock (a helper function) for synchronization.
 
-seablock.py
--- contains the definition for the SeaBlock class
--- This class stores data about various locations in the ocean, and is used by 
+`seablock.py`
+- contains the definition for the SeaBlock class
+- This class stores data about various locations in the ocean, and is used by 
     organisms to see their surrounding environment.
--- imports Set, with_lock, and Lock
+- imports Set, with_lock, and Lock
 
-foodchain.py
--- contains the definition for the Foodchain class
--- This class is used to store predator-prey relationships between different 
+`foodchain.py`
+- contains the definition for the Foodchain class
+- This class is used to store predator-prey relationships between different 
     types of organism.
 
-location.py
--- contains the definition for the Location class
--- This class represents a location in the ocean, used to locate the creature 
+`location.py`
+- contains the definition for the Location class
+- This class represents a location in the ocean, used to locate the creature 
     geographically.
 
-organism.py
--- contains the definition for the Organism class
--- This class is the parent for all organisms in the ocean, and implements 
+`organism.py`
+- contains the definition for the Organism class
+- This class is the parent for all organisms in the ocean, and implements 
     general functions to facilitate the operation of various types of organisms.
--- imports threading, random, location, and helper_functions
+- imports threading, random, location, and helper_functions
 
-fish.py
--- contains the definition for the Fish class
--- This class inherits from organism, and represents a general type of creature 
+`fish.py`
+- contains the definition for the Fish class
+- This class inherits from organism, and represents a general type of creature 
     which is mobile, does not inherently operate in groups, and reproduces 
     sexually.
--- imports random and organism
+- imports random and organism
 
-barrier.py
--- contains the definition for the Barrier class
--- This class is used to synchronize the simulation such that no deadlock or 
+`barrier.py`
+- contains the definition for the Barrier class
+- This class is used to synchronize the simulation such that no deadlock or 
     time confusion occurs.
 
-graphic_output.py
--- contains the definition for the graphicsOutput() function, which can be used 
+`graphic_output.py`
+- contains the definition for the graphicsOutput() function, which can be used 
     to create an image of each tick of the simulation
 
-helper_functions.py
--- contains definitions for two helper functions, with_lock and random_pick
--- with_lock was taken from the class notes
--- random_pick was taken from Python Cookbook, 2nd Edition:http://bit.ly/1QfSwDs
+`helper_functions.py`
+- contains definitions for two helper functions, with_lock and random_pick
+- with_lock was taken from the class notes
+- random_pick was taken from Python Cookbook, 2nd Edition:http://bit.ly/1QfSwDs
 
 Files that contain class definitions for our organisms. All of them eventually 
 inherit from Organism, and some also inherit from Fish:
--- coccolithophores.py
--- grouper.py
--- herring.py
--- manatee.py
--- shark.py
+- `coccolithophores.py`
+- `grouper.py`
+- `herring.py`
+- `manatee.py`
+- `shark.py`
 -- shrimp.py
 -- starfish.py
 -- tuna.py
