@@ -43,6 +43,8 @@ To launch the simulation with graphics output to file, enter
 
 `python main.py -g`
 
+![Sample image of command-line output](imgs/sample-command-line-output.png)
+
 To launch a simulation with automatic graphics output and files, enter
 
 `python main.py -g fs`
