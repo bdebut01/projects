@@ -1,5 +1,3 @@
-### A comprehensive hub for displaying my completed projects.
-
 #### Access Log Visualization
 Language: Java using Processing as the IDE
 Team: Solo
