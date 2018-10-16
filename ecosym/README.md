@@ -126,6 +126,6 @@ inherit from Organism, and some also inherit from Fish:
 - `herring.py`
 - `manatee.py`
 - `shark.py`
--- shrimp.py
--- starfish.py
--- tuna.py
+- `shrimp.py`
+- `starfish.py`
+- `tuna.py`
