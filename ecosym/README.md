@@ -1,11 +1,13 @@
-ECOSYM
+# ECOSYM
+
 By: Reema Al-Marzoog, Ben deButts, Nathan Stocking
+
 Date: December 11, 2015
 
 
 _-_-_-_-_-_-_-_-_-_
 
-Project Description
+## Project Description
 
 _-_-_-_-_-_-_-_-_-_
 
@@ -20,7 +22,7 @@ to read and affect changes to the ocean.
 
 _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-INSTRUCTIONS ON HOW TO RUN CODE
+## INSTRUCTIONS ON HOW TO RUN CODE
 
 _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
@@ -60,7 +62,7 @@ marine life).
 
 _-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-Directory & Files explanation
+## Directory & Files explanation
 
 _-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
