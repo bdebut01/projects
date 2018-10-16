@@ -32,9 +32,9 @@ the way in which the graphics will be implemented, as follows:
     graphics behavior (output only to file) will be enabled.
 3. If you would like other graphics parameters, you can specify an argument to 
     the `-g` flag, which can contain any of the following characters:
-  1. `f` - enables output to image files in the current directory
-  2. `s` - automatically opens the default image viewer with the current frame
-  3. `d` - debug output of the last frame to a csv file (not really intended for
+    1. `f` - enables output to image files in the current directory
+    2. `s` - automatically opens the default image viewer with the current frame
+    3. `d` - debug output of the last frame to a csv file (not really intended for
         use)
 
 Examples:
