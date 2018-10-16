@@ -17,6 +17,7 @@ organisms or groups thereof. There is a central ecosystem class which contains
 the shared state of the ocean and stores data and functions allowing organisms 
 to read and affect changes to the ocean.
 
+See [project-final-report.pdf](project-final-report.pdf) for comprehensive description with relevant class hierarchy charts and explanations.
 
 ## How To Run Code
 
