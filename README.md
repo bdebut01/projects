@@ -1,6 +1,13 @@
-A comprehensive hub for displaying my completed projects.
+### A comprehensive hub for displaying my completed projects.
 
-Access log: Java using Processing as the IDE
-d3-travel-map: d3
+#### Access Log Visualization
+Language: Java using Processing as the IDE
+Team: Solo
 
-Enjoy!
+#### d3-travel-map
+Language: Javascript using d3
+Team: Solo
+
+#### ecosym
+Language: Python
+Team: Reema Al-Marzoog, Nathan Stocking
