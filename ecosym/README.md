@@ -50,6 +50,7 @@ To launch a simulation with automatic graphics output and files, enter
 `python main.py -g fs`
 
 ![GIF of simulation graphic output](imgs/sample-graphic-output.gif)
+*For instance, you'll notice at the bottom right a manatee is eaten by a shark. Signified by a blue marker vanishing after a collision with a red marker.*
 
 Once you have launched the simulation, you must answer some questions about the 
 specific simulation parameters you would like to use. The program will prompt 
