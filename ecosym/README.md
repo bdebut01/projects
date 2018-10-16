@@ -5,11 +5,8 @@ By: Reema Al-Marzoog, Ben deButts, Nathan Stocking
 Date: December 11, 2015
 
 
-_-_-_-_-_-_-_-_-_-_
-
 ## Project Description
 
-_-_-_-_-_-_-_-_-_-_
 
 We created a simulation of a marine ecosystem. The ecosystem contains marine 
 organisms and simulates the relationships between these organisms. We also 
@@ -20,11 +17,9 @@ organisms or groups thereof. There is a central ecosystem class which contains
 the shared state of the ocean and stores data and functions allowing organisms 
 to read and affect changes to the ocean.
 
-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
-## INSTRUCTIONS ON HOW TO RUN CODE
+## Instructions on how to run code
 
-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 In order to run the project, you will need python installed and the Pillow image
 library.
@@ -60,11 +55,9 @@ minute's worth of an organism's actions. In real time, each tick will last for
 about a second (so, a real world second approximates a minute of simulated 
 marine life).
 
-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 ## Directory & Files explanation
 
-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 
 main.py
 -- contains the main function, which prompts the user for input, retrieves it, 
