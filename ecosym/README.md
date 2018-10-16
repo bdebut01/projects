@@ -18,30 +18,33 @@ the shared state of the ocean and stores data and functions allowing organisms
 to read and affect changes to the ocean.
 
 
-## Instructions on how to run code
+## How To Run Code
 
 
 In order to run the project, you will need python installed and the Pillow image
 library.
 To start, type 
-    python main.py
+    `python main.py`
 at a terminal. You have the option to include command-line parameters to specify
 the way in which the graphics will be implemented, as follows:
 1. If no parameters are provided, the graphics are disabled.
-2. If you use the command line flag -g with no extra arguments, the default 
+2. If you use the command line flag `-g` with no extra arguments, the default 
     graphics behavior (output only to file) will be enabled.
 3. If you would like other graphics parameters, you can specify an argument to 
-    the -g flag, which can contain any of the following characters:
-    a. f - enables output to image files in the current directory
-    b. s - automatically opens the default image viewer with the current frame
-    c. d - debug output of the last frame to a csv file (not really intended for
+    the `-g` flag, which can contain any of the following characters:
+  a. `f` - enables output to image files in the current directory
+  b. `s` - automatically opens the default image viewer with the current frame
+  c. `d` - debug output of the last frame to a csv file (not really intended for
         use)
 
 Examples:
 To launch the simulation with graphics output to file, enter
-    python main.py -g
+
+`python main.py -g`
+
 To launch a simulation with automatic graphics output and files, enter
-    python main.py -g fs
+
+`python main.py -g fs`
 
 Once you have launched the simulation, you must answer some questions about the 
 specific simulation parameters you would like to use. The program will prompt 
