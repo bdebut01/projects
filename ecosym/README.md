@@ -49,6 +49,8 @@ To launch a simulation with automatic graphics output and files, enter
 
 `python main.py -g fs`
 
+![GIF of simulation graphic output](imgs/sample-graphic-output.gif)
+
 Once you have launched the simulation, you must answer some questions about the 
 specific simulation parameters you would like to use. The program will prompt 
 you for input and provide examples. Follow all instructions to launch the 
