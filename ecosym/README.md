@@ -2,6 +2,8 @@
 
 By: Reema Al-Marzoog, Ben deButts, Nathan Stocking
 
+NOTE: Copied over from [this repo](https://github.com/bdebut01/ecosym) if you're interested in git histories.
+
 Date: December 11, 2015
 
 
