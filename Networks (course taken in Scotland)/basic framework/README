@@ -1,3 +1,0 @@
-Implements sender and receiver endpoints for transferring a large file
-from sender to the receiver on localhost over UDP as a sequence of small
-messages with 1KB maximum payload using Dummynet.
