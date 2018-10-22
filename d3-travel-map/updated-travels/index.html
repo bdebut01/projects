@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="en">
+<head>
+	<script src="//d3js.org/d3.v3.min.js"></script>
+	<script src="https://unpkg.com/topojson@3"></script>
+	
+	<link rel="stylesheet" type="text/css" href="./public/stylesheets/main.css">
+
+	<title>Ben's Travel Map</title>
+</head>
+<body>
+<h1>Ben in <span id="date">May 4, 1994</span></h1>
+<script>
+	var width = 960/2,
+    	height = 960/2;
+
+	var projection = d3.geo.orthographic()
+		.translate([width / 2, height / 2])
+		.scale(width / 2 - 20)
+		.clipAngle(90)
+		.precision(0.6);
+
+	var canvas = d3.select("body").append("canvas")
+		.attr("width", width)
+		.attr("height", height);
+
+	var c = canvas.node().getContext("2d");
+
+	var path = d3.geo.path()
+		.projection(projection)
+		.context(c);
+
+	// List of d3-geo projections: https://github.com/d3/d3-geo-projection
+	// d3.geoPatterson() 
+	d3.json("/topoworld.json", afterLoad);
+
+	function afterLoad(error, world) {
+		if (error) return console.log("Error loading world json file: " + error);
+		console.log("Successfully obtained world json file");
+		
+		console.log(world);
+
+		var globe = {type: "Sphere"}
+		var land = topojson.feature(world, world.objects.world)
+		var countries = topojson.feature(world, world.objects.world).features
+		var borders = topojson.mesh(world, world.objects.world, function(a, b) { return a !== b; })
+
+		canvas.insert("path")
+      .datum(topojson.mesh(world, world.objects.world, function(a, b) { return a !== b; }))
+      .attr("class", "boundary")
+      .attr("d", path)
+      .style('stroke', '#000');
+
+		c.fillStyle = "#ccc", c.beginPath(), path(land), c.fill();
+		// c.fillStyle = "#f00", c.beginPath(), path(countries[80]), c.fill();
+		c.strokeStyle = "#000", c.lineWidth = .5, c.beginPath(), path(borders), c.stroke();
+
+		// Uncomment for Globe outline
+		// c.strokeStyle = "#000", c.lineWidth = 2, c.beginPath(), path(globe), c.stroke();
+	}
+
+d3.select(self.frameElement).style("height", height + "px");
+
+</script>
+</body>
