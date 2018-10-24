@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Done with help from the below tutorials:
+
+	D3.js - animated U.S. states border map :
+		https://github.com/maptime-ams/animated-borders-d3js
+
+	Mike Bostock’s "World Map" :
+		https://bl.ocks.org/mbostock/4180634 
+
+	World map data obtained from Natural Earth Data :
+		https://www.naturalearthdata.com/downloads/50m-cultural-vectors/
+
+	 -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+	<script src="//d3js.org/d3.v3.min.js"></script>
+	<script src="//d3js.org/d3.geo.projection.v0.min.js"></script>
+	<script src="//d3js.org/topojson.v1.min.js"></script>
+
+
+	<link href="static/main.css" rel="stylesheet">
+
+	<script src="static/chroniton.js"></script>
+	<link href="static/chroniton.css" rel="stylesheet">
+	<style>
+  
+	</style>
+	<title>Ben's Global Travel Map w/ Slider</title>
+</head>
+<body>
+	<svg>
+  	<g id="countries"></g>
+	</svg>
+	<h1>Ben in <span id="date">Jan 2002</span></h1>
+	<div id="slider">
+	</div>	
+	<script>
+	  var svgCountries = d3.select("svg #countries"),
+	    countries = {},
+	    startDate = "", // TODO: make new Date() ?
+	    selectedDate = startDate;
+
+		var width = window.innerWidth,
+	  	height = window.innerHeight;
+
+	  var projection = d3.geo.kavrayskiy7()
+	    .scale(170)
+	    .translate([width / 2, height / 2])
+	    .precision(.1);
+
+	  var path = d3.geo.path()
+	      .projection(projection);
+
+	  d3.json("data/topoworld.json", function(error, world) {	
+			if (error) throw error;
+	  	console.log(world)
+
+	  	var countries = topojson.feature(world, world.objects.countries).features,
+      	neighbors = topojson.neighbors(world.objects.countries.geometries);
+
+		  svgCountries.selectAll(".country")
+		      .data(countries)
+		    .enter().insert("path")
+		      .attr("class", "country")
+		      .attr("d", path)
+		      .style("fill", "#fff");
+
+		  svgCountries.insert("path", ".graticule")
+		      .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
+		      .attr("class", "boundary")
+		      .attr("d", path);
+			  });
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
