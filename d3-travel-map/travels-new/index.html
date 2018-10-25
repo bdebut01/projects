@@ -36,6 +36,7 @@
   	<g id="countries"></g>
 	</svg>
 	<h1>Ben in <span id="date">Jan 2002</span></h1>
+	<h2></h2>
 	<div id="slider">
 	</div>	
 	<script>
@@ -48,7 +49,7 @@
 	  	height = window.innerHeight;
 
 	  var projection = d3.geo.kavrayskiy7()
-	    .scale(170)
+	    .scale(225)
 	    .translate([width / 2, height / 2])
 	    .precision(.1);
 
@@ -59,21 +60,30 @@
 			if (error) throw error;
 	  	console.log(world)
 
-	  	var countries = topojson.feature(world, world.objects.countries).features,
-      	neighbors = topojson.neighbors(world.objects.countries.geometries);
+	  	var countries = topojson.feature(world, world.objects.countries).features;
 
 		  svgCountries.selectAll(".country")
 		      .data(countries)
 		    .enter().insert("path")
 		      .attr("class", "country")
 		      .attr("d", path)
-		      .style("fill", "#fff");
+		      .on("mouseover", function(d){
+            d3.select("h2").text(d.properties.NAME);
+            d3.select(this).attr("class","country hover");
+        	})
+        	// Interestingly this gives mouseevent the time needed to smoothly dequeue
+        	// for instance without it you'll find certain countries not activating on hover
+        	.transition() 
+        	.on("mouseout", function(d){
+            d3.select("h2").text("");
+            d3.select(this).attr("class","country");
+        	});
 
-		  svgCountries.insert("path", ".graticule")
+			svgCountries.insert("path")
 		      .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
 		      .attr("class", "boundary")
 		      .attr("d", path);
-			  });
+		    });
 
 </script>
 </body>
