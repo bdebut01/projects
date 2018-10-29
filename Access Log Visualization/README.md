@@ -7,6 +7,7 @@ This program aims to expedite and facilitate the network monitoring process by a
 
 Completed as my final research project for the Tufts course: Security Systems with Professor Ming Chow.
 
-To view the code or run the application as it currently stands, visit the original [repo](https://github.com/bdebut01/VizSec/tree/master/Project)
+To view the code or run the application as it currently stands, visit the original [repo](https://github.com/bdebut01/VizSec/tree/master/Project). 
+
 Note: was written on Processing in Java so a familiar build system would be needed to run code.
 
