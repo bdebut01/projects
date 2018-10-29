@@ -23,7 +23,7 @@ The first fully working implementation of the travel map, uses [Datamaps](https:
 Retired this one, focusing on globe/travel-new
 
 Sample: 
-![Static screenshot of travels prototype](img/travels-first-go.png)
+![Static screenshot of travels prototype](travels/img/travels-first-go.png)
 
 ## travel-new
 
