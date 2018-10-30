@@ -48,9 +48,10 @@
 		var width = window.innerWidth,
 	  	height = window.innerHeight;
 
+	  // Very easy to play with different projections by changing this line
 	  var projection = d3.geo.kavrayskiy7()
 	    .scale(225)
-	    .translate([width / 2, height / 2])
+	    .translate([width / 2, height / 1.7])
 	    .precision(.1);
 
 	  var path = d3.geo.path()
@@ -69,20 +70,12 @@
 		      .attr("d", path)
 		      .on("mouseover", function(d){
             d3.select("h2").text(d.properties.NAME);
-            d3.select(this).attr("class","country hover");
+            d3.select(this).attr("class","country hover")
         	})
-        	// Interestingly this gives mouseevent the time needed to smoothly dequeue
-        	// for instance without it you'll find certain countries not activating on hover
-        	.transition() 
         	.on("mouseout", function(d){
             d3.select("h2").text("");
-            d3.select(this).attr("class","country");
+            d3.select(this).attr("class","country")
         	});
-
-			svgCountries.insert("path")
-		      .datum(topojson.mesh(world, world.objects.countries, function(a, b) { return a !== b; }))
-		      .attr("class", "boundary")
-		      .attr("d", path);
 		    });
 
 </script>
