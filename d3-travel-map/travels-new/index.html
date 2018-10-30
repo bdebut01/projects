@@ -20,7 +20,7 @@
 	<script src="//d3js.org/d3.v3.min.js"></script>
 	<script src="//d3js.org/d3.geo.projection.v0.min.js"></script>
 	<script src="//d3js.org/topojson.v1.min.js"></script>
-
+	<script src="//d3js.org/queue.v1.min.js"></script>
 
 	<link href="static/main.css" rel="stylesheet">
 
@@ -51,15 +51,19 @@
 	  // Very easy to play with different projections by changing this line
 	  var projection = d3.geo.kavrayskiy7()
 	    .scale(225)
-	    .translate([width / 2, height / 1.7])
+	    .translate([width / 2, height / 1.7]) // cutting off Antarctica
 	    .precision(.1);
 
 	  var path = d3.geo.path()
 	      .projection(projection);
 
-	  d3.json("data/topoworld.json", function(error, world) {	
+		queue()
+			.defer(d3.json, "data/topoworld.json")
+			.await(ready);
+
+		function ready(error, world) {
 			if (error) throw error;
-	  	console.log(world)
+			console.log(world)
 
 	  	var countries = topojson.feature(world, world.objects.countries).features;
 
@@ -76,8 +80,7 @@
             d3.select("h2").text("");
             d3.select(this).attr("class","country")
         	});
-		    });
-
+		}
 </script>
 </body>
 </html>
