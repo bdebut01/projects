@@ -59,11 +59,14 @@
 
 		queue()
 			.defer(d3.json, "data/topoworld.json")
+			.defer(d3.json, "data/travels-data.json")
 			.await(ready);
 
-		function ready(error, world) {
+		function ready(error, world, travels) {
 			if (error) throw error;
+			
 			console.log(world)
+			console.log(travels)
 
 	  	var countries = topojson.feature(world, world.objects.countries).features;
 
