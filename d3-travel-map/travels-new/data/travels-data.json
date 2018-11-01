@@ -1,10 +1,10 @@
 {
 	"USA" : { 
-		"trip_IDs" 		: "",
-		"dates" 		: "",
-		"duration" 	    : "",
-		"with" 			: "",
-		"details" : "I live here!"
+		"trip_IDs" 		: [""],
+		"dates" 		: [""],
+		"duration" 	    : [""],
+		"with" 			: [""],
+		"details" : ["I live here!"]
 	},
 	"BHS" : {  
 		"trip_IDs" 		: ["0"],
@@ -127,7 +127,7 @@
 	},
 	"LAO" : {  
 		"trip_IDs" 		: ["9"],
-		"dates" 		: "2015-07",
+		"dates" 		: ["2015-07"],
 		"duration" 	    : ["4 days"],
 		"with" 			: ["older and younger brother"],
 		"details" 		: ["bus from China into Luang Prabang, stayed and motorbiked around neighboring countryside"]
@@ -175,43 +175,38 @@
 		"details" 		: ["met younger brother who was living in Uganda in Kigali, toured the small country"]
 	},
 	"SWE" : {  
-		"trip_IDs" 		: "13",
-		"dates" 		: "Late Spring 2017",
-		"times_visited" : "1",
-		"duration" 	    : "4 days",
-		"with" 			: "friend from the US who I met while studying abroad in Scotland",
-		"details" 		: "Met a friend living in Edinburgh, flew to Stockholm to see the city for a few days"
+		"trip_IDs" 		: ["13"],
+		"dates" 		: ["2017-05"],
+		"duration" 	    : ["4 days"],
+		"with" 			: ["friend from the US who I met while studying abroad in Scotland"],
+		"details" 		: ["Met a friend living in Edinburgh, flew to Stockholm to see the city for a few days"]
 	},
 	"NZL" : {  
-		"trip_IDs" 		: "14",
-		"dates" 		: "Fall 2017",
-		"times_visited" : "1",
-		"duration" 	    : "3 months",
-		"with" 			: "friend from High School",
-		"details" 		: "spent 3 mos WWOOFing and tramping through southern island mountains"
+		"trip_IDs" 		: ["14"],
+		"dates" 		: ["2017-09"],
+		"duration" 	    : ["3 months"],
+		"with" 			: ["friend from High School"],
+		"details" 		: ["spent 3 mos WWOOFing and tramping through southern island mountains"]
 	},
 	"KOR" : {  
-		"trip_IDs" 		: "15",
-		"dates" 		: "Winter 2017",
-		"times_visited" : "1",
-		"duration" 	    : "1 week",
-		"with" 			: "older brother",
-		"details" 		: "took a ferry from Qingdao in China to Incheon, celebrated new years in Seoul"
+		"trip_IDs" 		: ["15"],
+		"dates" 		: ["2017-12"],
+		"duration" 	    : ["1 week"],
+		"with" 			: ["older brother"],
+		"details" 		: ["took a ferry from Qingdao in China to Incheon, celebrated new years in Seoul"]
 	},
 	"MEX" : {  
-		"trip_IDs" 		: "16",
-		"dates" 		: "Winter 2018",
-		"times_visited" : "1",
-		"duration" 	    : "1 day",
-		"with" 			: "older brother",
-		"details" 		: "stayed over in Mexico City while heading from SF to Lima, Peru"
+		"trip_IDs" 		: ["16"],
+		"dates" 		: ["2018-01"],
+		"duration" 	    : ["1 day"],
+		"with" 			: ["older brother"],
+		"details" 		: ["stayed over in Mexico City while heading from SF to Lima, Peru"]
 	},
 	"PER" : {  
-		"trip_IDs" 		: "16",
-		"dates" 		: "Spring 2018",
-		"times_visited" : "1",
-		"duration" 	    : "3 mos",
-		"with" 			: "older brother",
-		"details" 		: "lived in Lima for 2 months, then traveled for a net month with friend and family"
+		"trip_IDs" 		: ["16"],
+		"dates" 		: ["2018-01"],
+		"duration" 	    : ["3 months"],
+		"with" 			: ["older brother"],
+		"details" 		: ["lived in Lima for 2 months, then traveled for a net month with friend and family"]
 	}
 }
