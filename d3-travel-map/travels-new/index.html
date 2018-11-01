@@ -74,8 +74,10 @@
 	  	
 	  	function update() {
 	  		// filter selectedTravels by < selectedDate
-	  		console.log(selectedTravels);
 	  		// console.log(world);
+	  		selectedTravels = updateSelectedTravels(travels)
+
+	  		console.log(selectedTravels);
 
 			  svgCountries.selectAll(".country")
 			      .data(countries)
@@ -83,8 +85,7 @@
 			      .attr("d", path)
 			      .attr("class", "country")
 			      .attr("id", function(d) {
-			      		if(d.properties.ISO_A3 in selectedTravels || d.properties.ISO_A3_EH in selectedTravels) return "visited";
-			      		return "unvisited";
+			      		return hasVisited(d, selectedTravels);
 			      })
 			      .on("mouseover", function(d){
 	            d3.select("h2").text(d.properties.NAME);
@@ -108,16 +109,41 @@
                 var newDate = date;
                 if (convertToDateString(newDate) != convertToDateString(selectedDate)) {
                   selectedDate = newDate
-                  console.log("set selectedDate to: " + selectedDate)
                   d3.select("#currentdate").html(convertToDateString(selectedDate))
-                  // svgStates.selectAll("path").remove();
-                  // update();
+                  svgCountries.selectAll("path").remove();
+                  update();
                 }
               })
               .playButton(true)
               .playbackRate(0.2)
-              .loop(true)
           );
+		}
+
+		function updateSelectedTravels(travels) {
+			var newList = {}
+			console.log(travels)
+			for(var key in travels) {
+					var country = travels[key]
+					for (var j in country.dates) {
+						var newDate = new Date(country.dates[j])
+						// console.log("compare " + convertToDateString(selectedDate) + " to " + convertToDateString(newDate))
+						if(selectedDate > newDate) {
+							console.log(convertToDateString(selectedDate) + " > " +  convertToDateString(newDate))
+							newList[key] = country
+							break;
+						}
+					}
+			}
+			return newList
+		}
+
+		function hasVisited(country, travelsList) {
+			var iso = (country.properties.ISO_A3 == -99) ? country.properties.ISO_A3_EH : country.properties.ISO_A3
+			// console.log(travelsList[0])
+			var result = (iso in travelsList) ? "visited" : "unvisited"
+			// console.log(result)
+			if(result == "visited") console.log(iso + " is visited")
+			return result
 		}
 
 		function convertToDateString(inputDate) {
