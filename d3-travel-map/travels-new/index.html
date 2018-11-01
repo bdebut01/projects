@@ -74,7 +74,8 @@
 	  	
 	  	function update() {
 	  		// filter selectedTravels by < selectedDate
-	  		console.log(selectedTravels);
+	  		// console.log(selectedTravels);
+	  		// console.log(world);
 
 			  svgCountries.selectAll(".country")
 			      .data(countries)
@@ -82,7 +83,7 @@
 			      .attr("d", path)
 			      .attr("class", "country")
 			      .attr("id", function(d) {
-			      		if(d.properties.ISO_A3 in selectedTravels) return "visited";
+			      		if(d.properties.ISO_A3 in selectedTravels || d.properties.ISO_A3_EH in selectedTravels) return "visited";
 			      		return "unvisited";
 			      })
 			      .on("mouseover", function(d){

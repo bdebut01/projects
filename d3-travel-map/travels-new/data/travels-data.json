@@ -9,7 +9,7 @@
 	},
 	"BHS" : {  
 		"trip_IDs" 		: "0",
-		"dates" 		: "2002",
+		"dates" 		: "2002-03",
 		"times_visited" : "1",
 		"duration" 	    : "1 week",
 		"with" 			: "whole family",
@@ -17,7 +17,7 @@
 	},
 	"ITA" : {  
 		"trip_IDs" 		: "1",
-		"dates" 		: "Summer 2006",
+		"dates" 		: "2006-07",
 		"times_visited" : "1",
 		"duration" 	    : "3 weeks",
 		"with" 			: "whole family",
@@ -25,7 +25,7 @@
 	},
 	"CHE" : {  
 		"trip_IDs" 		: "1",
-		"dates" 		: "Summer 2006",
+		"dates" 		: "2006-06",
 		"times_visited" : "1",
 		"duration" 	    : "1 week",
 		"with" 			: "whole family, friend",
@@ -37,7 +37,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 day",
 		"with" 			: "whole family, friend",
-		"details" 		: "went to Paleo concern in Leon"
+		"details" 		: "went to Paleo concert in Leon"
 	},
 	"GBR" : {  
 		"trip_IDs" 	    : "1, 6",
