@@ -46,8 +46,7 @@
 	  var svgCountries = d3.select("svg #countries"),
 	    countries = {},
 	    selectedDate = new Date('2002-01'),
-	   	datePrintOptions = {month: 'short', year: 'numeric' },
-	   	dateStoreOptions = {month: '2-digit', year: 'numeric' };
+	   	datePrintOptions = {month: 'short', year: 'numeric' }
 
 		var width = window.innerWidth,
 	  	height = window.innerHeight;
@@ -96,15 +95,15 @@
             chroniton()
               .domain([new Date(selectedDate), new Date()])
               .labelFormat(function(date) {
-                return date.toLocaleDateString('US-en', datePrintOptions);
+                return convertToDateString(date)
               })
               .width(600)
               .on('change', function(date) {
                 var newDate = date;
-                if (newDate.toLocaleDateString('US-en', datePrintOptions) != selectedDate.toLocaleDateString('US-en', datePrintOptions)) {
-                  selectedDate = newDate;
-                  console.log("set selectedDate to: " + selectedDate.toLocaleDateString('US-en', datePrintOptions))
-                  d3.select("#currentdate").html(selectedDate.toLocaleDateString('US-en', datePrintOptions));
+                if (convertToDateString(newDate) != convertToDateString(selectedDate)) {
+                  selectedDate = newDate
+                  console.log("set selectedDate to: " + selectedDate)
+                  d3.select("#currentdate").html(convertToDateString(selectedDate))
                   // svgStates.selectAll("path").remove();
                   // update();
                 }
@@ -113,6 +112,10 @@
               .playbackRate(0.2)
               .loop(true)
           );
+		}
+
+		function convertToDateString(inputDate) {
+			return inputDate.toLocaleDateString('US-en', datePrintOptions)
 		}
 </script>
 </body>
