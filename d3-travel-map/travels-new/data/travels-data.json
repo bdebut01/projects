@@ -1,6 +1,5 @@
 {
 	"USA" : { 
-		"order numbers"	: "",
 		"trip_IDs" 		: "",
 		"dates" 		: "",
 		"times_visited" : "",
@@ -9,7 +8,6 @@
 		"details" : "I live here!"
 	},
 	"BHS" : {  
-		"order numbers"	: "0",
 		"trip_IDs" 		: "0",
 		"dates" 		: "2002",
 		"times_visited" : "1",
@@ -18,7 +16,6 @@
 		"details" 		: "\"eco-camping\" with family"
 	},
 	"ITA" : {  
-		"order numbers"	: "1",
 		"trip_IDs" 		: "1",
 		"dates" 		: "Summer 2006",
 		"times_visited" : "1",
@@ -27,7 +24,6 @@
 		"details" 		: "Rome > Pompeii > Tuscany > Cinque Terre > Venice"
 	},
 	"CHE" : {  
-		"order numbers"	: "2",
 		"trip_IDs" 		: "1",
 		"dates" 		: "Summer 2006",
 		"times_visited" : "1",
@@ -36,7 +32,6 @@
 		"details" 		: "visited friend living in Geneva, day trips to Interlochen, the Alps"
 	},
 	"FRA" : {  
-		"order numbers"	: "3",
 		"trip_IDs" 		: "1",
 		"dates" 		: "Summer 2006",
 		"times_visited" : "1",
@@ -45,7 +40,6 @@
 		"details" 		: "went to Paleo concern in Leon"
 	},
 	"GBR" : {  
-		"order numbers" : "4, 11, 13",
 		"trip_IDs" 	    : "1, 6",
 		"dates" 	    : "Summer 2006, Spring 2015, Spring 2017",
 		"times_visited" : "3",
@@ -54,7 +48,6 @@
 		"details" 	    : "London for 1 week || later attended University of Edinburgh in Scotland for spring semester of my junior year || met friend living in Edinburgh before heading off to Stockholm "
 	},
 	"GTM" : {  
-		"order numbers"	: "5",
 		"trip ID" 		: "2",
 		"dates" 		: "Summer 2008",
 		"times_visited" : "1",
@@ -63,7 +56,6 @@
 		"details" 		: "month-long Spanish learning course, immersion in Quetzaltenango"
 	},
 	"CRI" : {  
-		"order numbers"	: "6",
 		"trip ID" 		: "3",
 		"dates" 		: "Summer 2009",
 		"times_visited" : "1",
@@ -72,7 +64,6 @@
 		"details" 		: "month-long Spanish immersion in Atenas"
 	},
 	"JPN" : {  
-		"order numbers"	: "7",
 		"trip ID" 		: "3, 15",
 		"dates" 		: "Summer 2012, Winter 2018",
 		"times_visited" : "2",
@@ -81,7 +72,6 @@
 		"details" 		: "backpacked throughout including Tokyo, Sendai, Kanazawa, Hiroshima, Kyoto, Obama || stayed with friend in Kyoto for New Years, headed north to Sendai for skiing"
 	},
 	"CHN" : {  
-		"order numbers"	: "8",
 		"trip ID" 		: "3, 9, 11, 15",
 		"dates" 		: "Summer 2012, Summer 2015, Summer 2016, Spring 2018",
 		"times_visited" : "4",
@@ -90,7 +80,6 @@
 		"details" 		: "mostly on tour through Shanghai, Beijing, || later returned to visit brother working in Beijing, toured down through southern China || traveled west through Gansu & Xingjiang province || later stopped through Beijing and Qingdao on my way to Japan to meet rest of family"
 	},
 	"ISR" : {  
-		"order numbers"	: "9",
 		"trip ID" 		: "4",
 		"dates" 		: "Winter 2014",
 		"times_visited" : "1",
@@ -99,7 +88,6 @@
 		"details" 		: "birthright trip"
 	},
 	"CAN" : {  
-		"order numbers"	: "10",
 		"trip ID" 		: "5",
 		"dates" 		: "Spring 2014",
 		"times_visited" : "1",
@@ -108,7 +96,6 @@
 		"details" 		: "bused to Montreal for a week with friends"
 	},
 	"NLD" : {  
-		"order numbers"	: "12",
 		"trip ID" 		: "7",
 		"dates" 		: "February 2015",
 		"times_visited" : "1",
@@ -117,7 +104,6 @@
 		"details" 		: "Amsterdam for 2 days during week off from University"
 	},
 	"BEL" : {  
-		"order numbers"	: "13",
 		"trip ID" 		: "7",
 		"dates" 		: "February 2015",
 		"times_visited" : "1",
@@ -126,7 +112,6 @@
 		"details" 		: "Bruges for 2 days during week off from University"
 	},
 	"DEU" : {  
-		"order numbers"	: "14",
 		"trip ID" 		: "8",
 		"dates" 		: "April 2015",
 		"times_visited" : "1",
@@ -135,7 +120,6 @@
 		"details" 		: "Munich, day trip to Neushwanstein castle"
 	},
 	"CZE" : {  
-		"order numbers"	: "15",
 		"trip ID" 		: "8",
 		"dates" 		: "April 2015",
 		"times_visited" : "1",
@@ -144,7 +128,6 @@
 		"details" 		: "Prague, day trip to Kutna Hora"
 	},
 	"POL" : {  
-		"order numbers"	: "16",
 		"trip ID" 		: "8",
 		"dates" 		: "April 2015",
 		"times_visited" : "1",
@@ -153,7 +136,6 @@
 		"details" 		: "Krakow"
 	},
 	"HUN" : {  
-		"order numbers"	: "17",
 		"trip ID" 		: "8",
 		"dates" 		: "April 2015",
 		"times_visited" : "1",
@@ -162,7 +144,6 @@
 		"details" 		: "Budapest"
 	},
 	"LAO" : {  
-		"order numbers"	: "18",
 		"trip ID" 		: "9",
 		"dates" 		: "July '15",
 		"times_visited" : "1",
@@ -171,7 +152,6 @@
 		"details" 		: "bus from China into Luang Prabang, stayed and motorbiked around neighboring countryside"
 	},
 	"KHM" : {  
-		"order numbers"	: "19",
 		"trip ID" 		: "9",
 		"dates" 		: "July '15",
 		"times_visited" : "1",
@@ -180,7 +160,6 @@
 		"details" 		: "stayed in Phnom Penh, overnight bus to Siem Reap to see Angkor Wat"
 	},
 	"THA" : {  
-		"order numbers"	: "20",
 		"trip ID" 		: "9",
 		"dates" 		: "July '15",
 		"times_visited" : "1",
@@ -189,7 +168,6 @@
 		"details" 		: "3 days in Chiang Mai, train to Bangkok for another 4 days"
 	},
 	"ISL" : {  
-		"order numbers"	: "21",
 		"trip ID" 		: "10",
 		"dates" 		: "Spring 2016",
 		"times_visited" : "1",
@@ -198,7 +176,6 @@
 		"details" 		: "on week in an airbnb in Reyjavik, rented a car and tooled around the island hiking"
 	},
 	"KGZ" : {  
-		"order numbers"	: "22",
 		"trip ID" 		: "11",
 		"dates" 		: "Summer 2016",
 		"times_visited" : "1",
@@ -207,7 +184,6 @@
 		"details" 		: "crossed by car from Kashgar in Xingjiang, passed through Osh and Bishkek"
 	},
 	"KAZ" : {  
-		"order numbers"	: "23",
 		"trip ID" 		: "11",
 		"dates" 		: "Summer 2016",
 		"times_visited" : "1",
@@ -216,7 +192,6 @@
 		"details" 		: "treacherous bus ride north from Bishkek, hung out in Almaty"
 	},
 	"RWA" : {  
-		"order numbers"	: "24",
 		"trip ID" 		: "12",
 		"dates" 		: "Spring 2017",
 		"times_visited" : "1",
@@ -225,7 +200,6 @@
 		"details" 		: "met younger brother who was living in Uganda in Kigali, toured the small country"
 	},
 	"SWE" : {  
-		"order numbers"	: "25",
 		"trip ID" 		: "13",
 		"dates" 		: "Late Spring 2017",
 		"times_visited" : "1",
@@ -234,7 +208,6 @@
 		"details" 		: "Met a friend living in Edinburgh, flew to Stockholm to see the city for a few days"
 	},
 	"NZL" : {  
-		"order numbers"	: "26",
 		"trip ID" 		: "14",
 		"dates" 		: "Fall 2017",
 		"times_visited" : "1",
@@ -243,7 +216,6 @@
 		"details" 		: "spent 3 mos WWOOFing and tramping through southern island mountains"
 	},
 	"KOR" : {  
-		"order numbers"	: "27",
 		"trip ID" 		: "15",
 		"dates" 		: "Winter 2017",
 		"times_visited" : "1",
@@ -252,7 +224,6 @@
 		"details" 		: "took a ferry from Qingdao in China to Incheon, celebrated new years in Seoul"
 	},
 	"MEX" : {  
-		"order numbers"	: "28",
 		"trip ID" 		: "16",
 		"dates" 		: "Winter 2018",
 		"times_visited" : "1",
@@ -261,7 +232,6 @@
 		"details" 		: "stayed over in Mexico City while heading from SF to Lima, Peru"
 	},
 	"PER" : {  
-		"order numbers"	: "29",
 		"trip ID" 		: "16",
 		"dates" 		: "Spring 2018",
 		"times_visited" : "1",

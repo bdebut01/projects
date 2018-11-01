@@ -70,9 +70,12 @@
 
 	  	var countries = topojson.feature(world, world.objects.countries).features;
 	  	var selectedTravels = travels;
+
 	  	
 	  	function update() {
 	  		// filter selectedTravels by < selectedDate
+	  		console.log(selectedTravels);
+
 			  svgCountries.selectAll(".country")
 			      .data(countries)
 			    .enter().insert("path")
