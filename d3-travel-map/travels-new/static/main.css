@@ -12,19 +12,21 @@
 }	
 
 .country {
-  fill: white;
+  fill: #F0EBDF;
 }
 
 .country:hover {
-  fill: #74a9cf;
+  fill: #EA8859;
 }
 
 #visited:hover {
-  fill: #0570b0;
+  fill: #252C3F;
+  fill-opacity: .8;
 }
 
 #visited {
-  fill: #a6bddb;
+  fill: #6D909C;
+  fill-opacity: .75;
 }
 
 svg {
