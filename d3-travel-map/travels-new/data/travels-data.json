@@ -2,90 +2,79 @@
 	"USA" : { 
 		"trip_IDs" 		: "",
 		"dates" 		: "",
-		"times_visited" : "",
 		"duration" 	    : "",
 		"with" 			: "",
 		"details" : "I live here!"
 	},
 	"BHS" : {  
-		"trip_IDs" 		: "0",
-		"dates" 		: "2002-03",
-		"times_visited" : "1",
-		"duration" 	    : "1 week",
-		"with" 			: "whole family",
-		"details" 		: "\"eco-camping\" with family"
+		"trip_IDs" 		: ["0"],
+		"dates" 		: ["2005-12"],
+		"duration" 	    : ["1 week"],
+		"with" 			: ["whole family and the Tamblings"],
+		"details" 		: ["\"eco-camping\" with family"]
 	},
 	"ITA" : {  
-		"trip_IDs" 		: "1",
-		"dates" 		: "2006-07",
-		"times_visited" : "1",
-		"duration" 	    : "3 weeks",
+		"trip_IDs" 		: ["1"],
+		"dates" 		: ["2006-07"],
+		"duration" 	    : ["3 weeks"],
 		"with" 			: "whole family",
 		"details" 		: "Rome > Pompeii > Tuscany > Cinque Terre > Venice"
 	},
 	"CHE" : {  
-		"trip_IDs" 		: "1",
-		"dates" 		: "2006-06",
-		"times_visited" : "1",
-		"duration" 	    : "1 week",
-		"with" 			: "whole family, friend",
-		"details" 		: "visited friend living in Geneva, day trips to Interlochen, the Alps"
+		"trip_IDs" 		: ["1"],
+		"dates" 		: ["2006-06"],
+		"duration" 	    : ["1 week"],
+		"with" 			: ["whole family, friend"],
+		"details" 		: ["visited friend living in Geneva, day trips to Interlochen, the Alps"]
 	},
 	"FRA" : {  
-		"trip_IDs" 		: "1",
-		"dates" 		: "Summer 2006",
-		"times_visited" : "1",
-		"duration" 	    : "1 day",
-		"with" 			: "whole family, friend",
-		"details" 		: "went to Paleo concert in Leon"
+		"trip_IDs" 		: ["1"],
+		"dates" 		: ["2006-08"],
+		"duration" 	    : ["1 day"],
+		"with" 			: ["whole family, friend"],
+		"details" 		: ["went to Paleo concert in Leon"]
 	},
 	"GBR" : {  
-		"trip_IDs" 	    : "1, 6",
-		"dates" 	    : "Summer 2006, Spring 2015, Spring 2017",
-		"times_visited" : "3",
-		"duration" 	    : "1 week, 5 months, 3 days",
-		"with" 		    : "whole family, friend",
-		"details" 	    : "London for 1 week || later attended University of Edinburgh in Scotland for spring semester of my junior year || met friend living in Edinburgh before heading off to Stockholm "
+		"trip_IDs" 	    : ["1", "6", "13"],
+		"dates" 	    : ["2006-08", "2015-01", "2017-05"],
+		"duration" 	    : ["1 week", "5 months", "3 days"],
+		"with" 		    : ["whole family", "made friends on study abroad",  "friend from study abroad"],
+		"details" 	    : ["London for 1 week",  "attended University of Edinburgh in Scotland for spring semester of my junior year", "met friend living in Edinburgh before heading off to Stockholm"]
 	},
 	"GTM" : {  
-		"trip ID" 		: "2",
-		"dates" 		: "Summer 2008",
-		"times_visited" : "1",
-		"duration" 	    : "1 month",
-		"with" 			: "older brother, high school students from Minnesota",
-		"details" 		: "month-long Spanish learning course, immersion in Quetzaltenango"
+		"trip ID" 		: ["2"],
+		"dates" 		: ["2008-06"],
+		"duration" 	    : ["1 month"],
+		"with" 			: ["older brother, high school students from Minnesota"],
+		"details" 		: ["month-long Spanish learning course, immersion in Quetzaltenango"]
 	},
 	"CRI" : {  
-		"trip ID" 		: "3",
-		"dates" 		: "Summer 2009",
-		"times_visited" : "1",
-		"duration" 	    : "1 month",
-		"with" 			: "2 friends, other high school students from US",
-		"details" 		: "month-long Spanish immersion in Atenas"
+		"trip ID" 		: ["3"],
+		"dates" 		: ["2009-06"],
+		"duration" 	    : ["1 month"],
+		"with" 			: ["2 friends, other high school students from US"],
+		"details" 		: ["month-long Spanish immersion in Atenas"]
 	},
 	"JPN" : {  
-		"trip ID" 		: "3, 15",
-		"dates" 		: "Summer 2012, Winter 2018",
-		"times_visited" : "2",
-		"duration" 	    : "3 weeks, 2 weeks",
-		"with" 			: "older brother, family minus youngest brother",
-		"details" 		: "backpacked throughout including Tokyo, Sendai, Kanazawa, Hiroshima, Kyoto, Obama || stayed with friend in Kyoto for New Years, headed north to Sendai for skiing"
+		"trip ID" 		: ["3", "15"],
+		"dates" 		: ["2012-07", "2018-01"],
+		"duration" 	    : ["3 weeks", "2 weeks"],
+		"with" 			: ["older brother", "family minus youngest brother"],
+		"details" 		: ["backpacked throughout including Tokyo, Sendai, Kanazawa, Hiroshima, Kyoto, Obama", "stayed with friend in Kyoto for New Years, headed north to Sendai for skiing"]
 	},
 	"CHN" : {  
-		"trip ID" 		: "3, 9, 11, 15",
-		"dates" 		: "Summer 2012, Summer 2015, Summer 2016, Spring 2018",
-		"times_visited" : "4",
-		"duration" 	    : "10 days, 20 days, 20 days, 10 days",
-		"with" 			: "older brother, tour group, whole family minus youngest brother",
-		"details" 		: "mostly on tour through Shanghai, Beijing, || later returned to visit brother working in Beijing, toured down through southern China || traveled west through Gansu & Xingjiang province || later stopped through Beijing and Qingdao on my way to Japan to meet rest of family"
+		"trip ID" 		: ["3", "9", "11", "15"],
+		"dates" 		: ["2012-07, 2015-06, 2016-07, 2017-12"],
+		"duration" 	    : ["10 days", "20 days", "20 days", "10 days"],
+		"with" 			: ["tour group", "whole family minus youngest brother", "older brother", "older brother"],
+		"details" 		: ["mostly on tour through Shanghai, Beijing", "returned to visit brother working in Beijing, toured down through southern China", "traveled west through Gansu & Xingjiang province", "stopped through Beijing and Qingdao on my way to Japan to meet rest of family"]
 	},
 	"ISR" : {  
-		"trip ID" 		: "4",
-		"dates" 		: "Winter 2014",
-		"times_visited" : "1",
-		"duration" 	    : "10 days",
-		"with" 			: "Tufts birthright",
-		"details" 		: "birthright trip"
+		"trip ID" 		: ["4"],
+		"dates" 		: ["2014-01"],
+		"duration" 	    : ["10 days"],
+		"with" 			: ["Tufts birthright"],
+		"details" 		: ["birthright trip"]
 	},
 	"CAN" : {  
 		"trip ID" 		: "5",
