@@ -17,8 +17,8 @@
 		"trip_IDs" 		: ["1"],
 		"dates" 		: ["2006-07"],
 		"duration" 	    : ["3 weeks"],
-		"with" 			: "whole family",
-		"details" 		: "Rome > Pompeii > Tuscany > Cinque Terre > Venice"
+		"with" 			: ["whole family"],
+		"details" 		: ["Rome > Pompeii > Tuscany > Cinque Terre > Venice"]
 	},
 	"CHE" : {  
 		"trip_IDs" 		: ["1"],
@@ -42,154 +42,140 @@
 		"details" 	    : ["London for 1 week",  "attended University of Edinburgh in Scotland for spring semester of my junior year", "met friend living in Edinburgh before heading off to Stockholm"]
 	},
 	"GTM" : {  
-		"trip ID" 		: ["2"],
+		"trip_IDs" 		: ["2"],
 		"dates" 		: ["2008-06"],
 		"duration" 	    : ["1 month"],
 		"with" 			: ["older brother, high school students from Minnesota"],
 		"details" 		: ["month-long Spanish learning course, immersion in Quetzaltenango"]
 	},
 	"CRI" : {  
-		"trip ID" 		: ["3"],
+		"trip_IDs" 		: ["3"],
 		"dates" 		: ["2009-06"],
 		"duration" 	    : ["1 month"],
 		"with" 			: ["2 friends, other high school students from US"],
 		"details" 		: ["month-long Spanish immersion in Atenas"]
 	},
 	"JPN" : {  
-		"trip ID" 		: ["3", "15"],
+		"trip_IDs" 		: ["3", "15"],
 		"dates" 		: ["2012-07", "2018-01"],
 		"duration" 	    : ["3 weeks", "2 weeks"],
 		"with" 			: ["older brother", "family minus youngest brother"],
 		"details" 		: ["backpacked throughout including Tokyo, Sendai, Kanazawa, Hiroshima, Kyoto, Obama", "stayed with friend in Kyoto for New Years, headed north to Sendai for skiing"]
 	},
 	"CHN" : {  
-		"trip ID" 		: ["3", "9", "11", "15"],
-		"dates" 		: ["2012-07, 2015-06, 2016-07, 2017-12"],
-		"duration" 	    : ["10 days", "20 days", "20 days", "10 days"],
+		"trip_IDs" 		: ["3", "9", "11", "15"],
+		"dates" 		: ["2012-07", "2015-06", "2016-07", "7-07-12"],
+		"duration"  : ["10 days", "20 days", "20 days", "10 days"],
 		"with" 			: ["tour group", "whole family minus youngest brother", "older brother", "older brother"],
-		"details" 		: ["mostly on tour through Shanghai, Beijing", "returned to visit brother working in Beijing, toured down through southern China", "traveled west through Gansu & Xingjiang province", "stopped through Beijing and Qingdao on my way to Japan to meet rest of family"]
+		"details" 		: ["mostly on tour through Shanghai, Beijing", "returned to visit brother working[ in Beijing, toured down through southern China", "traveled west through Gansu & Xingjiang province", "stopped through Beijing and Qingdao on my way to Japan to meet rest of family"]
 	},
-	"ISR" : {  
-		"trip ID" 		: ["4"],
+	"ISR" : {
+		"trip_IDs" 		: ["4"],
 		"dates" 		: ["2014-01"],
 		"duration" 	    : ["10 days"],
 		"with" 			: ["Tufts birthright"],
 		"details" 		: ["birthright trip"]
 	},
 	"CAN" : {  
-		"trip ID" 		: "5",
-		"dates" 		: "Spring 2014",
-		"times_visited" : "1",
-		"duration" 	    : "1 week",
-		"with" 			: "friends from Tufts",
-		"details" 		: "bused to Montreal for a week with friends"
+		"trip_IDs" 		: ["5", "11"],
+		"dates" 		: ["2014-04", "6-07-06"],
+		"duration"  : ["1 week"],
+		"with" 			: ["friends from Tufts", "solo although stayed with brother's friend"],
+		"details" 		: ["bused to Montreal for a week with friends", "stopped over in Vancouver on way to Beijing"]
 	},
-	"NLD" : {  
-		"trip ID" 		: "7",
-		"dates" 		: "February 2015",
-		"times_visited" : "1",
-		"duration" 	    : "3 days",
-		"with" 			: "friend",
-		"details" 		: "Amsterdam for 2 days during week off from University"
+	"NLD" : {
+		"trip_IDs" 		: ["7"],
+		"dates" 		: ["2015-02"],
+		"duration" 	    : ["3 days"],
+		"with" 			: ["friend"],
+		"details" 		: ["Amsterdam for 2 days during week off from University"]
 	},
 	"BEL" : {  
-		"trip ID" 		: "7",
-		"dates" 		: "February 2015",
-		"times_visited" : "1",
-		"duration" 	    : "3 days",
-		"with" 			: "friend",
-		"details" 		: "Bruges for 2 days during week off from University"
+		"trip_IDs" 		: ["7"],
+		"dates" 		: ["2015-02"],
+		"duration" 	    : ["3 days"],
+		"with" 			: ["friend"],
+		"details" 		: ["Bruges for 2 days during week off from University"]
 	},
 	"DEU" : {  
-		"trip ID" 		: "8",
-		"dates" 		: "April 2015",
-		"times_visited" : "1",
-		"duration" 	    : "2 days",
-		"with" 			: "friend",
-		"details" 		: "Munich, day trip to Neushwanstein castle"
+		"trip_IDs" 		: ["8"],
+		"dates" 		: ["2015-04"],
+		"duration" 	    : ["2 days"],
+		"with" 			: ["friend"],
+		"details" 		: ["Munich, day trip to Neushwanstein castle"]
 	},
 	"CZE" : {  
-		"trip ID" 		: "8",
-		"dates" 		: "April 2015",
-		"times_visited" : "1",
-		"duration" 	    : "3 days",
-		"with" 			: "friend",
-		"details" 		: "Prague, day trip to Kutna Hora"
+		"trip_IDs" 		: ["8"],
+		"dates" 		: ["2015-04"],
+		"duration" 	    : ["3 days"],
+		"with" 			: ["friend"],
+		"details" 		: ["Prague, day trip to Kutna Hora"]
 	},
 	"POL" : {  
-		"trip ID" 		: "8",
-		"dates" 		: "April 2015",
-		"times_visited" : "1",
-		"duration" 	    : "3 days",
-		"with" 			: "friend",
-		"details" 		: "Krakow"
+		"trip_IDs" 		: ["8"],
+		"dates" 		: ["2015-04"],
+		"duration" 	    : ["3 days"],
+		"with" 			: ["friend"],
+		"details" 		: ["Krakow"]
 	},
 	"HUN" : {  
-		"trip ID" 		: "8",
-		"dates" 		: "April 2015",
-		"times_visited" : "1",
-		"duration" 	    : "2 days",
-		"with" 			: "friend",
-		"details" 		: "Budapest"
+		"trip_IDs" 		: ["8"],
+		"dates" 		: ["2015-04"],
+		"duration" 	    : ["2 days"],
+		"with" 			: ["friend"],
+		"details" 		: ["Budapest"]
 	},
 	"LAO" : {  
-		"trip ID" 		: "9",
-		"dates" 		: "July '15",
-		"times_visited" : "1",
-		"duration" 	    : "4 days",
-		"with" 			: "older and younger brother",
-		"details" 		: "bus from China into Luang Prabang, stayed and motorbiked around neighboring countryside"
+		"trip_IDs" 		: ["9"],
+		"dates" 		: "2015-07",
+		"duration" 	    : ["4 days"],
+		"with" 			: ["older and younger brother"],
+		"details" 		: ["bus from China into Luang Prabang, stayed and motorbiked around neighboring countryside"]
 	},
 	"KHM" : {  
-		"trip ID" 		: "9",
-		"dates" 		: "July '15",
-		"times_visited" : "1",
-		"duration" 	    : "2 days",
-		"with" 			: "older and younger brother",
-		"details" 		: "stayed in Phnom Penh, overnight bus to Siem Reap to see Angkor Wat"
+		"trip_IDs" 		: ["9"],
+		"dates" 		: ["2015-07"],
+		"duration" 	    : ["2 days"],
+		"with" 			: ["older and younger brother"],
+		"details" 		: ["stayed in Phnom Penh, overnight bus to Siem Reap to see Angkor Wat"]
 	},
 	"THA" : {  
-		"trip ID" 		: "9",
-		"dates" 		: "July '15",
-		"times_visited" : "1",
-		"duration" 	    : "1 week",
-		"with" 			: "older and younger brother",
-		"details" 		: "3 days in Chiang Mai, train to Bangkok for another 4 days"
+		"trip_IDs" 		: ["9"],
+		"dates" 		: ["2015-07"],
+		"duration" 	    : ["1 week"],
+		"with" 			: ["older and younger brother"],
+		"details" 		: ["3 days in Chiang Mai, train to Bangkok for another 4 days"]
 	},
 	"ISL" : {  
-		"trip ID" 		: "10",
-		"dates" 		: "Spring 2016",
-		"times_visited" : "1",
-		"duration" 	    : "1 week",
-		"with" 			: "brother, and Evan",
-		"details" 		: "on week in an airbnb in Reyjavik, rented a car and tooled around the island hiking"
+		"trip_IDs" 		: ["10"],
+		"dates" 		: ["2016-04"],
+		"duration" 	    : ["1 week"],
+		"with" 			: ["brother, and Evan"],
+		"details" 		: ["week in an airbnb in Reyjavik, rented a car and tooled around the island hiking"]
 	},
 	"KGZ" : {  
-		"trip ID" 		: "11",
-		"dates" 		: "Summer 2016",
-		"times_visited" : "1",
-		"duration" 	    : "1 week",
-		"with" 			: "older brother",
-		"details" 		: "crossed by car from Kashgar in Xingjiang, passed through Osh and Bishkek"
+		"trip_IDs" 		: ["11"],
+		"dates" 		: ["2016-07"],
+		"duration" 	    : ["1 week"],
+		"with" 			: ["older brother"],
+		"details" 		: ["crossed by car from Kashgar in Xingjiang, passed through Osh and Bishkek"]
 	},
 	"KAZ" : {  
-		"trip ID" 		: "11",
-		"dates" 		: "Summer 2016",
-		"times_visited" : "1",
-		"duration" 	    : "6 days",
-		"with" 			: "older brother",
-		"details" 		: "treacherous bus ride north from Bishkek, hung out in Almaty"
+		"trip_IDs" 		: ["11"],
+		"dates" 		: ["2016-07"],
+		"duration" 	    : ["6 days"],
+		"with" 			: ["older brother"],
+		"details" 		: ["treacherous bus ride north from Bishkek, hung out in Almaty"]
 	},
 	"RWA" : {  
-		"trip ID" 		: "12",
-		"dates" 		: "Spring 2017",
-		"times_visited" : "1",
-		"duration" 	    : "10 days",
-		"with" 			: "family minus older brother",
-		"details" 		: "met younger brother who was living in Uganda in Kigali, toured the small country"
+		"trip_IDs" 		: ["12"],
+		"dates" 		: ["2017-04"],
+		"duration" 	    : ["10 days"],
+		"with" 			: ["family minus older brother"],
+		"details" 		: ["met younger brother who was living in Uganda in Kigali, toured the small country"]
 	},
 	"SWE" : {  
-		"trip ID" 		: "13",
+		"trip_IDs" 		: "13",
 		"dates" 		: "Late Spring 2017",
 		"times_visited" : "1",
 		"duration" 	    : "4 days",
@@ -197,7 +183,7 @@
 		"details" 		: "Met a friend living in Edinburgh, flew to Stockholm to see the city for a few days"
 	},
 	"NZL" : {  
-		"trip ID" 		: "14",
+		"trip_IDs" 		: "14",
 		"dates" 		: "Fall 2017",
 		"times_visited" : "1",
 		"duration" 	    : "3 months",
@@ -205,7 +191,7 @@
 		"details" 		: "spent 3 mos WWOOFing and tramping through southern island mountains"
 	},
 	"KOR" : {  
-		"trip ID" 		: "15",
+		"trip_IDs" 		: "15",
 		"dates" 		: "Winter 2017",
 		"times_visited" : "1",
 		"duration" 	    : "1 week",
@@ -213,7 +199,7 @@
 		"details" 		: "took a ferry from Qingdao in China to Incheon, celebrated new years in Seoul"
 	},
 	"MEX" : {  
-		"trip ID" 		: "16",
+		"trip_IDs" 		: "16",
 		"dates" 		: "Winter 2018",
 		"times_visited" : "1",
 		"duration" 	    : "1 day",
@@ -221,7 +207,7 @@
 		"details" 		: "stayed over in Mexico City while heading from SF to Lima, Peru"
 	},
 	"PER" : {  
-		"trip ID" 		: "16",
+		"trip_IDs" 		: "16",
 		"dates" 		: "Spring 2018",
 		"times_visited" : "1",
 		"duration" 	    : "3 mos",
