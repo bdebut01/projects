@@ -6,8 +6,7 @@
 		"times_visited" : "",
 		"duration" 	    : "",
 		"with" 			: "",
-		"details" : "I live here!",
-		"fillKey" : "2"
+		"details" : "I live here!"
 	},
 	"BHS" : {  
 		"order numbers"	: "0",
@@ -16,8 +15,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 week",
 		"with" 			: "whole family",
-		"details" 		: "\"eco-camping\" with family",
-		"fillKey" 		: "1"
+		"details" 		: "\"eco-camping\" with family"
 	},
 	"ITA" : {  
 		"order numbers"	: "1",
@@ -26,8 +24,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "3 weeks",
 		"with" 			: "whole family",
-		"details" 		: "Rome > Pompeii > Tuscany > Cinque Terre > Venice",
-		"fillKey" 		: "1"
+		"details" 		: "Rome > Pompeii > Tuscany > Cinque Terre > Venice"
 	},
 	"CHE" : {  
 		"order numbers"	: "2",
@@ -36,8 +33,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 week",
 		"with" 			: "whole family, friend",
-		"details" 		: "visited friend living in Geneva, day trips to Interlochen, the Alps",
-		"fillKey" 		: "1"
+		"details" 		: "visited friend living in Geneva, day trips to Interlochen, the Alps"
 	},
 	"FRA" : {  
 		"order numbers"	: "3",
@@ -46,8 +42,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 day",
 		"with" 			: "whole family, friend",
-		"details" 		: "went to Paleo concern in Leon",
-		"fillKey" 		: "1"
+		"details" 		: "went to Paleo concern in Leon"
 	},
 	"GBR" : {  
 		"order numbers" : "4, 11, 13",
@@ -56,8 +51,7 @@
 		"times_visited" : "3",
 		"duration" 	    : "1 week, 5 months, 3 days",
 		"with" 		    : "whole family, friend",
-		"details" 	    : "London for 1 week || later attended University of Edinburgh in Scotland for spring semester of my junior year || met friend living in Edinburgh before heading off to Stockholm ",
-		"fillKey" 	    : "2"
+		"details" 	    : "London for 1 week || later attended University of Edinburgh in Scotland for spring semester of my junior year || met friend living in Edinburgh before heading off to Stockholm "
 	},
 	"GTM" : {  
 		"order numbers"	: "5",
@@ -66,8 +60,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 month",
 		"with" 			: "older brother, high school students from Minnesota",
-		"details" 		: "month-long Spanish learning course, immersion in Quetzaltenango",
-		"fillKey" 		: "1"
+		"details" 		: "month-long Spanish learning course, immersion in Quetzaltenango"
 	},
 	"CRI" : {  
 		"order numbers"	: "6",
@@ -76,8 +69,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 month",
 		"with" 			: "2 friends, other high school students from US",
-		"details" 		: "month-long Spanish immersion in Atenas",
-		"fillKey" 		: "1"
+		"details" 		: "month-long Spanish immersion in Atenas"
 	},
 	"JPN" : {  
 		"order numbers"	: "7",
@@ -86,8 +78,7 @@
 		"times_visited" : "2",
 		"duration" 	    : "3 weeks, 2 weeks",
 		"with" 			: "older brother, family minus youngest brother",
-		"details" 		: "backpacked throughout including Tokyo, Sendai, Kanazawa, Hiroshima, Kyoto, Obama || stayed with friend in Kyoto for New Years, headed north to Sendai for skiing",
-		"fillKey" 		: "2"
+		"details" 		: "backpacked throughout including Tokyo, Sendai, Kanazawa, Hiroshima, Kyoto, Obama || stayed with friend in Kyoto for New Years, headed north to Sendai for skiing"
 	},
 	"CHN" : {  
 		"order numbers"	: "8",
@@ -96,8 +87,7 @@
 		"times_visited" : "4",
 		"duration" 	    : "10 days, 20 days, 20 days, 10 days",
 		"with" 			: "older brother, tour group, whole family minus youngest brother",
-		"details" 		: "mostly on tour through Shanghai, Beijing, || later returned to visit brother working in Beijing, toured down through southern China || traveled west through Gansu & Xingjiang province || later stopped through Beijing and Qingdao on my way to Japan to meet rest of family",
-		"fillKey" 		: "2"
+		"details" 		: "mostly on tour through Shanghai, Beijing, || later returned to visit brother working in Beijing, toured down through southern China || traveled west through Gansu & Xingjiang province || later stopped through Beijing and Qingdao on my way to Japan to meet rest of family"
 	},
 	"ISR" : {  
 		"order numbers"	: "9",
@@ -106,8 +96,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "10 days",
 		"with" 			: "Tufts birthright",
-		"details" 		: "birthright trip",
-		"fillKey" 		: "1"
+		"details" 		: "birthright trip"
 	},
 	"CAN" : {  
 		"order numbers"	: "10",
@@ -116,8 +105,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 week",
 		"with" 			: "friends from Tufts",
-		"details" 		: "bused to Montreal for a week with friends",
-		"fillKey" 		: "1"
+		"details" 		: "bused to Montreal for a week with friends"
 	},
 	"NLD" : {  
 		"order numbers"	: "12",
@@ -126,8 +114,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "3 days",
 		"with" 			: "friend",
-		"details" 		: "Amsterdam for 2 days during week off from University",
-		"fillKey" 		: "1"
+		"details" 		: "Amsterdam for 2 days during week off from University"
 	},
 	"BEL" : {  
 		"order numbers"	: "13",
@@ -136,8 +123,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "3 days",
 		"with" 			: "friend",
-		"details" 		: "Bruges for 2 days during week off from University",
-		"fillKey" 		: "1"
+		"details" 		: "Bruges for 2 days during week off from University"
 	},
 	"DEU" : {  
 		"order numbers"	: "14",
@@ -146,8 +132,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "2 days",
 		"with" 			: "friend",
-		"details" 		: "Munich, day trip to Neushwanstein castle",
-		"fillKey" 		: "1"
+		"details" 		: "Munich, day trip to Neushwanstein castle"
 	},
 	"CZE" : {  
 		"order numbers"	: "15",
@@ -156,8 +141,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "3 days",
 		"with" 			: "friend",
-		"details" 		: "Prague, day trip to Kutna Hora",
-		"fillKey" 		: "1"
+		"details" 		: "Prague, day trip to Kutna Hora"
 	},
 	"POL" : {  
 		"order numbers"	: "16",
@@ -166,8 +150,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "3 days",
 		"with" 			: "friend",
-		"details" 		: "Krakow",
-		"fillKey" 		: "1"
+		"details" 		: "Krakow"
 	},
 	"HUN" : {  
 		"order numbers"	: "17",
@@ -176,8 +159,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "2 days",
 		"with" 			: "friend",
-		"details" 		: "Budapest",
-		"fillKey" 		: "1"
+		"details" 		: "Budapest"
 	},
 	"LAO" : {  
 		"order numbers"	: "18",
@@ -186,8 +168,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "4 days",
 		"with" 			: "older and younger brother",
-		"details" 		: "bus from China into Luang Prabang, stayed and motorbiked around neighboring countryside",
-		"fillKey" 		: "1"
+		"details" 		: "bus from China into Luang Prabang, stayed and motorbiked around neighboring countryside"
 	},
 	"KHM" : {  
 		"order numbers"	: "19",
@@ -196,8 +177,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "2 days",
 		"with" 			: "older and younger brother",
-		"details" 		: "stayed in Phnom Penh, overnight bus to Siem Reap to see Angkor Wat",
-		"fillKey" 		: "1"
+		"details" 		: "stayed in Phnom Penh, overnight bus to Siem Reap to see Angkor Wat"
 	},
 	"THA" : {  
 		"order numbers"	: "20",
@@ -206,8 +186,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 week",
 		"with" 			: "older and younger brother",
-		"details" 		: "3 days in Chiang Mai, train to Bangkok for another 4 days",
-		"fillKey" 		: "1"
+		"details" 		: "3 days in Chiang Mai, train to Bangkok for another 4 days"
 	},
 	"ISL" : {  
 		"order numbers"	: "21",
@@ -216,8 +195,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 week",
 		"with" 			: "brother, and Evan",
-		"details" 		: "on week in an airbnb in Reyjavik, rented a car and tooled around the island hiking",
-		"fillKey" 		: "1"
+		"details" 		: "on week in an airbnb in Reyjavik, rented a car and tooled around the island hiking"
 	},
 	"KGZ" : {  
 		"order numbers"	: "22",
@@ -226,8 +204,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 week",
 		"with" 			: "older brother",
-		"details" 		: "crossed by car from Kashgar in Xingjiang, passed through Osh and Bishkek",
-		"fillKey" 		: "1"
+		"details" 		: "crossed by car from Kashgar in Xingjiang, passed through Osh and Bishkek"
 	},
 	"KAZ" : {  
 		"order numbers"	: "23",
@@ -236,8 +213,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "6 days",
 		"with" 			: "older brother",
-		"details" 		: "treacherous bus ride north from Bishkek, hung out in Almaty",
-		"fillKey" 		: "1"
+		"details" 		: "treacherous bus ride north from Bishkek, hung out in Almaty"
 	},
 	"RWA" : {  
 		"order numbers"	: "24",
@@ -246,8 +222,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "10 days",
 		"with" 			: "family minus older brother",
-		"details" 		: "met younger brother who was living in Uganda in Kigali, toured the small country",
-		"fillKey" 		: "1"
+		"details" 		: "met younger brother who was living in Uganda in Kigali, toured the small country"
 	},
 	"SWE" : {  
 		"order numbers"	: "25",
@@ -256,8 +231,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "4 days",
 		"with" 			: "friend from the US who I met while studying abroad in Scotland",
-		"details" 		: "Met a friend living in Edinburgh, flew to Stockholm to see the city for a few days",
-		"fillKey" 		: "1"
+		"details" 		: "Met a friend living in Edinburgh, flew to Stockholm to see the city for a few days"
 	},
 	"NZL" : {  
 		"order numbers"	: "26",
@@ -266,8 +240,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "3 months",
 		"with" 			: "friend from High School",
-		"details" 		: "spent 3 mos WWOOFing and tramping through southern island mountains",
-		"fillKey" 		: "2"
+		"details" 		: "spent 3 mos WWOOFing and tramping through southern island mountains"
 	},
 	"KOR" : {  
 		"order numbers"	: "27",
@@ -276,8 +249,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 week",
 		"with" 			: "older brother",
-		"details" 		: "took a ferry from Qingdao in China to Incheon, celebrated new years in Seoul",
-		"fillKey" 		: "1"
+		"details" 		: "took a ferry from Qingdao in China to Incheon, celebrated new years in Seoul"
 	},
 	"MEX" : {  
 		"order numbers"	: "28",
@@ -286,8 +258,7 @@
 		"times_visited" : "1",
 		"duration" 	    : "1 day",
 		"with" 			: "older brother",
-		"details" 		: "stayed over in Mexico City while heading from SF to Lima, Peru",
-		"fillKey" 		: "1"
+		"details" 		: "stayed over in Mexico City while heading from SF to Lima, Peru"
 	},
 	"PER" : {  
 		"order numbers"	: "29",
@@ -296,7 +267,6 @@
 		"times_visited" : "1",
 		"duration" 	    : "3 mos",
 		"with" 			: "older brother",
-		"details" 		: "lived in Lima for 2 months, then traveled for a net month with friend and family",
-		"fillKey" 		: "2"
+		"details" 		: "lived in Lima for 2 months, then traveled for a net month with friend and family"
 	}
 }

@@ -69,15 +69,17 @@
 			if (error) throw error;
 
 	  	var countries = topojson.feature(world, world.objects.countries).features;
+	  	var selectedTravels = travels;
 	  	
 	  	function update() {
+	  		// filter selectedTravels by < selectedDate
 			  svgCountries.selectAll(".country")
 			      .data(countries)
 			    .enter().insert("path")
 			      .attr("d", path)
 			      .attr("class", "country")
 			      .attr("id", function(d) {
-			      		if(d.properties.ISO_A3 in travels) return "visited";
+			      		if(d.properties.ISO_A3 in selectedTravels) return "visited";
 			      		return "unvisited";
 			      })
 			      .on("mouseover", function(d){
