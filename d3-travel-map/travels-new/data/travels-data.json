@@ -1,7 +1,7 @@
 {
 	"USA" : { 
 		"trip_IDs" 		: [""],
-		"dates" 		: [""],
+		"dates" 		: ["2000-01"],
 		"duration" 	    : [""],
 		"with" 			: [""],
 		"details" : ["I live here!"]
@@ -64,7 +64,7 @@
 	},
 	"CHN" : {  
 		"trip_IDs" 		: ["3", "9", "11", "15"],
-		"dates" 		: ["2012-07", "2015-06", "2016-07", "7-07-12"],
+		"dates" 		: ["2012-07", "2015-06", "2016-07", "2017-12"],
 		"duration"  : ["10 days", "20 days", "20 days", "10 days"],
 		"with" 			: ["tour group", "whole family minus youngest brother", "older brother", "older brother"],
 		"details" 		: ["mostly on tour through Shanghai, Beijing", "returned to visit brother working[ in Beijing, toured down through southern China", "traveled west through Gansu & Xingjiang province", "stopped through Beijing and Qingdao on my way to Japan to meet rest of family"]
