@@ -70,14 +70,9 @@
 
 	  	var countries = topojson.feature(world, world.objects.countries).features;
 	  	var selectedTravels = travels;
-
 	  	
 	  	function update() {
-	  		// filter selectedTravels by < selectedDate
-	  		// console.log(world);
 	  		selectedTravels = updateSelectedTravels(travels)
-
-	  		console.log(selectedTravels);
 
 			  svgCountries.selectAll(".country")
 			      .data(countries)
@@ -121,14 +116,11 @@
 
 		function updateSelectedTravels(travels) {
 			var newList = {}
-			console.log(travels)
 			for(var key in travels) {
 					var country = travels[key]
-					for (var j in country.dates) {
-						var newDate = new Date(country.dates[j])
-						// console.log("compare " + convertToDateString(selectedDate) + " to " + convertToDateString(newDate))
+					for (var i in country.dates) {
+						var newDate = new Date(country.dates[i])
 						if(selectedDate > newDate) {
-							console.log(convertToDateString(selectedDate) + " > " +  convertToDateString(newDate))
 							newList[key] = country
 							break;
 						}
@@ -139,11 +131,7 @@
 
 		function hasVisited(country, travelsList) {
 			var iso = (country.properties.ISO_A3 == -99) ? country.properties.ISO_A3_EH : country.properties.ISO_A3
-			// console.log(travelsList[0])
-			var result = (iso in travelsList) ? "visited" : "unvisited"
-			// console.log(result)
-			if(result == "visited") console.log(iso + " is visited")
-			return result
+			return (iso in travelsList) ? "visited" : "unvisited"
 		}
 
 		function convertToDateString(inputDate) {
