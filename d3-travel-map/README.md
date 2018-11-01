@@ -12,7 +12,9 @@ Presently, a static rendering of the earth using a d3.geo orthographic projectio
 
 #### Future 
 
-Project countries visited in different colors, allow world rotation, interactivity with travel details when hovering over country
+- Project countries visited in different colors
+- Allow world rotation
+- Interactivity with travel details when hovering over country
 
 ## travels
 
@@ -31,8 +33,12 @@ Sample:
 
 #### Description
 
-Also using d3.geo and downloaded data from Natural Earth Data (see above), but as a non-globe [geoKavrayskiy7](https://github.com/d3/d3-geo-projection#geoKavrayskiy7) projection.
+Also using d3.geo and downloaded data from Natural Earth Data (see above), but as a non-globe [geoKavrayskiy7](https://github.com/d3/d3-geo-projection#geoKavrayskiy7) projection. 
+
+#### Latest Working Update
+
+Countries visited by a date fill as you move the chronological slider.
 
 #### Future
 
-Implement a chronological slider that updates the map to reflect countries visited by that point in time, interactivity similar to the `/travels`project.
+- Interactivity similar to the `/travels`project.
