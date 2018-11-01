@@ -12,9 +12,20 @@
  height: 50px;
 }	
 
+.country {
+  fill: white;
+}
+
 .country:hover {
-  fill: blue;
-  fill-opacity: .6;
+  fill: #74a9cf;
+}
+
+#visited:hover {
+  fill: #0570b0;
+}
+
+#visited {
+  fill: #a6bddb;
 }
 
 svg {
@@ -25,8 +36,6 @@ svg {
 
 path {
  stroke: #666;
- fill: black; /* need fill for mouseevent to recognize */
- fill-opacity: 0;
  stroke-width: .5px;
  stroke-linecap: round;
  stroke-linejoin: round;

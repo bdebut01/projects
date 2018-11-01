@@ -12,6 +12,9 @@
 	World map data obtained from Natural Earth Data :
 		https://www.naturalearthdata.com/downloads/50m-cultural-vectors/
 
+	Country ISO_A3 list : 
+		https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3
+
 	 -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -65,24 +68,26 @@
 		function ready(error, world, travels) {
 			if (error) throw error;
 			
-			console.log(world)
-			console.log(travels)
+			// console.log(world)
+			// console.log(Object.values(travels))
 
 	  	var countries = topojson.feature(world, world.objects.countries).features;
 
 		  svgCountries.selectAll(".country")
 		      .data(countries)
 		    .enter().insert("path")
-		      .attr("class", "country")
 		      .attr("d", path)
+		      .attr("class", "country")
+		      .attr("id", function(d) {
+		      		if(d.properties.ISO_A3 in travels) return "visited";
+		      		return "unvisited";
+		      })
 		      .on("mouseover", function(d){
             d3.select("h2").text(d.properties.NAME);
-            d3.select(this).attr("class","country hover")
         	})
         	.on("mouseout", function(d){
             d3.select("h2").text("");
-            d3.select(this).attr("class","country")
-        	});
+        	});      	
 		}
 </script>
 </body>
