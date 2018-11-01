@@ -38,15 +38,16 @@
 	<svg>
   	<g id="countries"></g>
 	</svg>
-	<h1>Ben in <span id="date">Jan 2002</span></h1>
+	<h1>Ben in <span id="currentdate">Jan 2002</span></h1>
 	<h2></h2>
 	<div id="slider">
 	</div>	
 	<script>
 	  var svgCountries = d3.select("svg #countries"),
 	    countries = {},
-	    startDate = "", // TODO: make new Date() ?
-	    selectedDate = startDate;
+	    selectedDate = new Date('2002-01'),
+	   	datePrintOptions = {month: 'short', year: 'numeric' },
+	   	dateStoreOptions = {month: '2-digit', year: 'numeric' };
 
 		var width = window.innerWidth,
 	  	height = window.innerHeight;
@@ -67,27 +68,51 @@
 
 		function ready(error, world, travels) {
 			if (error) throw error;
-			
-			// console.log(world)
-			// console.log(Object.values(travels))
 
 	  	var countries = topojson.feature(world, world.objects.countries).features;
+	  	
+	  	function update() {
+			  svgCountries.selectAll(".country")
+			      .data(countries)
+			    .enter().insert("path")
+			      .attr("d", path)
+			      .attr("class", "country")
+			      .attr("id", function(d) {
+			      		if(d.properties.ISO_A3 in travels) return "visited";
+			      		return "unvisited";
+			      })
+			      .on("mouseover", function(d){
+	            d3.select("h2").text(d.properties.NAME);
+	        	})
+	        	.on("mouseout", function(d){
+	            d3.select("h2").text("");
+	        	});
+	    }
 
-		  svgCountries.selectAll(".country")
-		      .data(countries)
-		    .enter().insert("path")
-		      .attr("d", path)
-		      .attr("class", "country")
-		      .attr("id", function(d) {
-		      		if(d.properties.ISO_A3 in travels) return "visited";
-		      		return "unvisited";
-		      })
-		      .on("mouseover", function(d){
-            d3.select("h2").text(d.properties.NAME);
-        	})
-        	.on("mouseout", function(d){
-            d3.select("h2").text("");
-        	});      	
+	    update();
+
+	    d3.select("#slider")
+          .call(
+            chroniton()
+              .domain([new Date(selectedDate), new Date()])
+              .labelFormat(function(date) {
+                return date.toLocaleDateString('US-en', datePrintOptions);
+              })
+              .width(600)
+              .on('change', function(date) {
+                var newDate = date;
+                if (newDate.toLocaleDateString('US-en', datePrintOptions) != selectedDate.toLocaleDateString('US-en', datePrintOptions)) {
+                  selectedDate = newDate;
+                  console.log("set selectedDate to: " + selectedDate.toLocaleDateString('US-en', datePrintOptions))
+                  d3.select("#currentdate").html(selectedDate.toLocaleDateString('US-en', datePrintOptions));
+                  // svgStates.selectAll("path").remove();
+                  // update();
+                }
+              })
+              .playButton(true)
+              .playbackRate(0.2)
+              .loop(true)
+          );
 		}
 </script>
 </body>
