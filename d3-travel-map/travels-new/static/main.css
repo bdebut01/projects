@@ -11,6 +11,16 @@
  height: 50px;
 }	
 
+#infobox {
+  left: 20%;
+  top: 30px;
+  border-radius: 25px;
+  background: #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px; 
+}
+
 .country {
   fill: #F0EBDF;
 }

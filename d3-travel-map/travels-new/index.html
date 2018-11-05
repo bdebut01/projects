@@ -42,6 +42,8 @@
 	<h2></h2>
 	<div id="slider">
 	</div>	
+	<div id="infobox">
+	</div>
 	<script>
 	  var svgCountries = d3.select("svg #countries"),
 	    countries = {},
@@ -88,6 +90,15 @@
 	        	.on("mouseout", function(d){
 	            d3.select("h2").text("");
 	        	});
+
+	      d3.selectAll("#visited")
+			  	.on("mouseover", function(d) {
+			  			// d3.select("infobox").text(d.properties.NAME);	
+			  			console.log("highlighted a visited country!")
+			  	})
+			  	.on("mouseout", function(d){
+			          d3.select("h2").text("");
+			    });
 	    }
 
 	    update();
