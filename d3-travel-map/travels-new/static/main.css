@@ -6,33 +6,36 @@
  height: 50px;
 }	
 
-/*.infobox {
-  position: fixed;
-  left: 20%;
-  top: 30px;
+#infobox {
+  opacity: 0.0;
+  position: absolute;
+  left: 4%;
+  bottom: 10%;
   border-radius: 25px;
-  background: #73AD21;
-  padding: 20px; 
+  background: #6D909C;
+  padding: 10px; 
   width: 200px;
-  height: 150px; 
-}*/
+  height: 220px; 
+}
 
-.country {
+.country, .unvisited {
   fill: #F0EBDF;
 }
 
-.country:hover {
+.country:hover, .unvisited:hover {
   fill: #EA8859;
+  opacity: 1.0;
 }
 
-#visited:hover {
-  fill: #252C3F;
-  fill-opacity: .8;
-}
-
-#visited {
+.visited {
   fill: #6D909C;
   fill-opacity: .75;
+}
+
+.visited:hover {
+  fill: #252C3F;
+  fill-opacity: .8;
+  opacity: 1.0;
 }
 
 svg {
@@ -64,7 +67,7 @@ h1 {
 h2 {
   position: absolute;
   left: 20px;
-  top: 60px;
+  top: 70px;
   font-family: 'Bree Serif';
   font-size: 16px;
 }

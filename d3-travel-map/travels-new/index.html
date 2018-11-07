@@ -28,7 +28,6 @@
 
 	<!-- // <script src="//d3js.org/topojson.v1.min.js"></script> -->
 	<script type="text/javascript" src="static/topojson.v1.min.js"></script>
-	
 
 	<!-- // <script src="//d3js.org/queue.v1.min.js"></script> -->
 	<script type="text/javascript" src="static/queue.v1.min.js"></script>
@@ -51,7 +50,7 @@
 	<h2></h2>
 	
 	<div id="slider"></div>	
-	<!-- <g id="infobox">Info</g> -->
+	<div id="infobox"></div>
 	<script>
 	  var svgCountries = d3.select("svg #countries"),
 	    countries = {},
@@ -89,7 +88,7 @@
 			    .enter().insert("path")
 			      .attr("d", path)
 			      .attr("class", "country")
-			      .attr("id", function(d) {
+			      .attr("class", function(d) {
 			      		return hasVisited(d, selectedTravels);
 			      })
 			      .on("mouseover", function(d){
