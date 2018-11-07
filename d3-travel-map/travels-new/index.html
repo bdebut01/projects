@@ -20,10 +20,18 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<script src="//d3js.org/d3.v3.min.js"></script>
-	<script src="//d3js.org/d3.geo.projection.v0.min.js"></script>
-	<script src="//d3js.org/topojson.v1.min.js"></script>
-	<script src="//d3js.org/queue.v1.min.js"></script>
+	<!-- // <script src="//d3js.org/d3.v3.min.js"></script> -->
+	<script type="text/javascript" src="static/d3.v3.min.js"></script>
+
+	<!-- // <script src="//d3js.org/d3.geo.projection.v0.min.js"></script> -->
+	<script type="text/javascript" src="static/d3.geo.projection.v0.min.js"></script>
+
+	<!-- // <script src="//d3js.org/topojson.v1.min.js"></script> -->
+	<script type="text/javascript" src="static/topojson.v1.min.js"></script>
+	
+
+	<!-- // <script src="//d3js.org/queue.v1.min.js"></script> -->
+	<script type="text/javascript" src="static/queue.v1.min.js"></script>
 
 	<link href="static/main.css" rel="stylesheet">
 
@@ -39,11 +47,11 @@
   	<g id="countries"></g>
 	</svg>
 	<h1>Ben in <span id="currentdate">Jan 2002</span></h1>
+	
 	<h2></h2>
-	<div id="slider">
-	</div>	
-	<div id="infobox">
-	</div>
+	
+	<div id="slider"></div>	
+	<!-- <g id="infobox">Info</g> -->
 	<script>
 	  var svgCountries = d3.select("svg #countries"),
 	    countries = {},
@@ -91,14 +99,11 @@
 	            d3.select("h2").text("");
 	        	});
 
-	      d3.selectAll("#visited")
-			  	.on("mouseover", function(d) {
-			  			// d3.select("infobox").text(d.properties.NAME);	
-			  			console.log("highlighted a visited country!")
-			  	})
-			  	.on("mouseout", function(d){
-			          d3.select("h2").text("");
-			    });
+	     //  d3.selectAll("#visited")
+			  	// .on("mouseover", myMouseOverFunction(d))
+			  	// .on("mouseout", function(d){
+			   //        d3.select("h2").text("");
+			   //  });
 	    }
 
 	    update();
@@ -123,6 +128,13 @@
               .playButton(true)
               .playbackRate(0.2)
           );
+		}
+
+		var myMouseOverFunction = function(d) {
+	      d3.select("h2").text(d.properties.NAME);
+				var infobox = d3.select("p"); 			// select our p tag 
+				infobox.style("visibility", "visible");		// on mouse over, it should be visible
+				infobox.text("This circle has a radius of " + circle.attr("r") + " pixels.");
 		}
 
 		function updateSelectedTravels(travels) {

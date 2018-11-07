@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 #slider {
  position: absolute;
  left: 40%;
@@ -11,7 +6,8 @@
  height: 50px;
 }	
 
-#infobox {
+/*.infobox {
+  position: fixed;
   left: 20%;
   top: 30px;
   border-radius: 25px;
@@ -19,7 +15,7 @@
   padding: 20px; 
   width: 200px;
   height: 150px; 
-}
+}*/
 
 .country {
   fill: #F0EBDF;
