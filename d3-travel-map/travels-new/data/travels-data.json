@@ -78,8 +78,8 @@
 	},
 	"CAN" : {  
 		"trip_IDs" 		: ["5", "11"],
-		"dates" 		: ["2014-04", "6-07-06"],
-		"duration"  : ["1 week"],
+		"dates" 		: ["2014-04", "2016-07"],
+		"duration"  : ["1 week", "2 days"],
 		"with" 			: ["friends from Tufts", "solo although stayed with brother's friend"],
 		"details" 		: ["bused to Montreal for a week with friends", "stopped over in Vancouver on way to Beijing"]
 	},
