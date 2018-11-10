@@ -95,7 +95,10 @@
 			      .on("mouseover", function (d) {
 				      d3.select("h2").text(d.properties.NAME)
 				      if(this.classList.contains('visited')) {
-								d3.select("div#infobox").style("visibility", "visible")
+				      	var visitDetails = selectedTravels[obtainCountryISO(d)]
+								d3.select("div#infobox")
+								.text("Visited details: " + visitDetails["details"])
+								.style("visibility", "visible")
 							} 
 						})
 	        	.on("mouseout", function(d){
@@ -131,13 +134,23 @@
 		function updateSelectedTravels(travels) {
 			var newList = {}
 			for(var key in travels) {
-					var country = travels[key]
+					var country = clone(travels[key])
+					var datesPassed = 0
 					for (var i in country.dates) {
 						var newDate = new Date(country.dates[i])
 						if(selectedDate > newDate) {
-							newList[key] = country
-							break;
+							datesPassed++
 						}
+					}
+					if(datesPassed > 0) {
+						// Each country log has an entry for *each* visit, 
+						//	only want to pass the details of visits that
+						//	have happened at this point.
+						Object.keys(country).map(function(key, index) {
+						  country[key] = country[key].slice(0, datesPassed);
+						  console.log(datesPassed)
+						});
+						newList[key] = country;
 					}
 			}
 			return newList
@@ -155,6 +168,17 @@
 		function convertToDateString(inputDate) {
 			return inputDate.toLocaleDateString('US-en', datePrintOptions)
 		}
+
+		function clone(obj){
+    if(obj == null || typeof(obj) != 'object')
+        return obj;
+
+    var temp = new obj.constructor(); 
+    for(var key in obj)
+        temp[key] = clone(obj[key]);
+
+    return temp;
+}
 </script>
 </body>
 </html>
