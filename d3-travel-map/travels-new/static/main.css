@@ -32,7 +32,7 @@ div#infobox {
 
 .visited {
   fill: #6D909C;
-  fill-opacity: .75;
+  fill-opacity: .5;
 }
 
 .visited:hover {
