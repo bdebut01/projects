@@ -92,20 +92,16 @@
 			      .attr("class", function(d) {
 			      		return hasVisited(d, selectedTravels);
 			      })
-			      .on("mouseover", function(d){
-	            d3.select("h2").text(d.properties.NAME)
-	            d3.select("div#infobox").style("visibility", "visible");
-	        	})
+			      .on("mouseover", function (d) {
+				      d3.select("h2").text(d.properties.NAME)
+				      if(this.classList.contains('visited')) {
+								d3.select("div#infobox").style("visibility", "visible")
+							} 
+						})
 	        	.on("mouseout", function(d){
 	            d3.select("h2").text("")
 	            d3.select("div#infobox").style("visibility", "hidden");
 	        	});
-
-	     //  d3.selectAll("#visited")
-			  	// .on("mouseover", myMouseOverFunction(d))
-			  	// .on("mouseout", function(d){
-			   //        d3.select("h2").text("");
-			   //  });
 	    }
 
 	    update();
@@ -132,13 +128,6 @@
           );
 		}
 
-		var myMouseOverFunction = function(d) {
-	      d3.select("h2").text(d.properties.NAME);
-				var infobox = d3.select("p"); 			// select our p tag 
-				infobox.style("visibility", "visible");		// on mouse over, it should be visible
-				infobox.text("This circle has a radius of " + circle.attr("r") + " pixels.");
-		}
-
 		function updateSelectedTravels(travels) {
 			var newList = {}
 			for(var key in travels) {
@@ -155,8 +144,12 @@
 		}
 
 		function hasVisited(country, travelsList) {
-			var iso = (country.properties.ISO_A3 == -99) ? country.properties.ISO_A3_EH : country.properties.ISO_A3
+			var iso = obtainCountryISO(country)
 			return (iso in travelsList) ? "visited" : "unvisited"
+		}
+
+		function obtainCountryISO(country) {
+			return (country.properties.ISO_A3 == -99) ? country.properties.ISO_A3_EH : country.properties.ISO_A3
 		}
 
 		function convertToDateString(inputDate) {
