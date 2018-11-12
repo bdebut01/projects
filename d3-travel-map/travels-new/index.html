@@ -92,6 +92,12 @@
 			      .attr("class", function(d) {
 			      		return hasVisited(d, selectedTravels);
 			      })
+			      .style("fill-opacity", function (d) {
+			      	if(this.classList.contains('visited')) {
+				      	var visitDetails = selectedTravels[obtainCountryISO(d)]
+			      		return .35 * visitDetails["dates"].length
+			      	}
+			      })
 			      .on("mouseover", function (d) {
 				      d3.select("h2").text(d.properties.NAME)
 				      if(this.classList.contains('visited')) {
