@@ -1,13 +1,13 @@
 ### Latest update
 
-Country fill darkens with number of visits at that moment in time.
+List visits so far and the date of the visit in the infobox.
 
 
 ### TODO
 
 - Infobox
-    - Include relevant interesting info
-    - Style internal elements by category with font size, bold, etc
+    - Style internal elements and adjust container to fit internal content
+    - Darken countries by number of days there instead of number of visits. See Bostock's [Choropleth example](https://beta.observablehq.com/@mbostock/d3-choropleth)
 - Farther down the line:
     - Animations, specifically one to make it clearer when a country has been visited
     - Radio buttons/dropdown for different people's travels
