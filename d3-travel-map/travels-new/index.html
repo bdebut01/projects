@@ -103,7 +103,14 @@
 				      if(this.classList.contains('visited')) {
 				      	var visitDetails = selectedTravels[obtainCountryISO(d)]
 								d3.select("div#infobox")
-								.text("Visited details: " + visitDetails["details"])
+								.html(function () {
+									var result = "<p><h3>Visited details: </h3>"
+									var visitInfo = visitDetails['details']
+									for(var visitIndex in visitInfo) {
+										result += "<li>" + "<small>(" + convertToDateString(new Date(visitDetails.dates[visitIndex])) + ") </small>" + visitInfo[visitIndex] + "</li>"
+									}
+									return result + "</p>"
+									})
 								.style("visibility", "visible")
 							} 
 						})
@@ -171,7 +178,14 @@
 		}
 
 		function convertToDateString(inputDate) {
-			return inputDate.toLocaleDateString('US-en', datePrintOptions)
+			// Need to add one to month because Javascript Date starts at 00 for January
+			var newMonth = inputDate.getMonth()
+			newMonth = (newMonth+2 > 12) ? 1 : newMonth+2
+			var year = inputDate.getFullYear()
+			console.log("new Date(" + year + "-" + newMonth + ")")
+			var newDate = new Date(year + "-" + newMonth)
+			console.log(newDate.toLocaleDateString('US-en', datePrintOptions));
+			return newDate.toLocaleDateString('US-en', datePrintOptions)
 		}
 
 		function clone(obj){
