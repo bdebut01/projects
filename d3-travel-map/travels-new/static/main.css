@@ -6,6 +6,11 @@
  height: 50px;
 }	
 
+div#title-box {
+  padding-top: 0px;
+  padding-left: 15px;
+}
+
 div#infobox {
   position: absolute;
   visibility: hidden;
@@ -41,6 +46,7 @@ div#infobox {
 }
 
 svg {
+  padding: 10px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -59,17 +65,15 @@ path {
 }
 
 h1 {
- position: absolute;
- left: 20px;
- top: 20px;
+ margin: 0px; 
+ position: float;
  font-family: 'Bree Serif';
  font-size: 35px;
 }
 
 h2 {
-  position: absolute;
-  left: 20px;
-  top: 70px;
+  margin: 0px; 
+  position: float;
   font-family: 'Bree Serif';
   font-size: 16px;
 }

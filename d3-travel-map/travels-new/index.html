@@ -45,9 +45,10 @@
 	<svg>
   	<g id="countries"></g>
 	</svg>
-	<h1>Ben in <span id="currentdate">Jan 2002</span></h1>
-	
-	<h2></h2>
+	<div id="title-box">
+		<h1>Ben in <span id="currentdate">Jan 2002</span></h1>
+		<h2></h2>
+	</div>
 	
 	<div id="slider"></div>
 	<div id="infobox"></div>	
@@ -182,9 +183,7 @@
 			var newMonth = inputDate.getMonth()
 			newMonth = (newMonth+2 > 12) ? 1 : newMonth+2
 			var year = inputDate.getFullYear()
-			console.log("new Date(" + year + "-" + newMonth + ")")
 			var newDate = new Date(year + "-" + newMonth)
-			console.log(newDate.toLocaleDateString('US-en', datePrintOptions));
 			return newDate.toLocaleDateString('US-en', datePrintOptions)
 		}
 
