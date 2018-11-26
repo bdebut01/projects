@@ -37,8 +37,9 @@ Also using d3.geo and downloaded data from Natural Earth Data (see above), but a
 
 #### Latest Working Update
 
-Countries visited by a date fill as you move the chronological slider.
+List visits so far and the date of the visit in the infobox displayed on hover.
 
 #### Future
 
-- Interactivity similar to the `/travels`project.
+- Animations, specifically one to make it clearer when a country has been visited
+- Radio buttons/dropdown for different people's travels
